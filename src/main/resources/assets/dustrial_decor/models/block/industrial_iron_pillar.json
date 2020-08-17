@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "dustrial_decor:block/bolted_industrial_iron",
+    "side": "dustrial_decor:block/industrial_iron_pillar"
+  }
+}

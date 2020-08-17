@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "dustrial_decor:block/bolted_industrial_iron"
+  }
+}
