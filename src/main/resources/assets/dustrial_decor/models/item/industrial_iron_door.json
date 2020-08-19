@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "dustrial_decor:item/industrial_iron_door"
+  }
+}

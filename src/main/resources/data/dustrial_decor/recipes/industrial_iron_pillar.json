@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "dustrial_decor:industrial_iron_block"
+    }
+  },
+  "result": {
+    "item": "dustrial_decor:industrial_iron_pillar",
+    "count": 3
+  }
+}

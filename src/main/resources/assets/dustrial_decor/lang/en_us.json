@@ -1,0 +1,19 @@
+{
+  "block.dustrial_decor.industrial_iron_block": "Industrial Iron Block",
+  "block.dustrial_decor.industrial_iron_pillar": "Industrial Iron Pillar",
+  "block.dustrial_decor.bolted_industrial_iron_block": "Bolted Industrial Iron Block",
+  "block.dustrial_decor.industrial_iron_trapdoor": "Industrial Iron Trapdoor",
+  "block.dustrial_decor.industrial_iron_door": "Industrial Iron Door",
+  "block.dustrial_decor.chain_link_fence": "Chain Link Fence",
+  "block.dustrial_decor.barbed_chain_link_fence": "Barbed Chain Link Fence",
+  "block.dustrial_decor.barbed_iron_bars": "Barbed Iron Bars",
+  "block.dustrial_decor.chain_trapdoor": "Chain Link Trapdoor",
+  "block.dustrial_decor.chain_door": "Chain Link Door",
+  "block.dustrial_decor.padded_block": "Padded Block",
+  "block.dustrial_decor.mini_padded_block": "Mini Padded Block",
+  "block.dustrial_decor.padded_trapdoor": "Padded Trapdoor",
+  "block.dustrial_decor.padded_door": "Padded Door",
+
+
+  "death.attack.sting.player": "{Player} was pricked to death"
+}
