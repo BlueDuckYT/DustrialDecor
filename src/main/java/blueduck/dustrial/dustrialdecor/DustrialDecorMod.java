@@ -5,10 +5,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.entity.EntityType;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -50,13 +54,7 @@ public class DustrialDecorMod
     private void setup(final FMLCommonSetupEvent event)
     {
 
-        RenderTypeLookup.setRenderLayer(DustrialBlocks.CHAIN_LINK_FENCE.get(), RenderType.getCutoutMipped());
-        RenderTypeLookup.setRenderLayer(DustrialBlocks.BARBED_CHAIN_LINK_FENCE.get(), RenderType.getCutoutMipped());
-        RenderTypeLookup.setRenderLayer(DustrialBlocks.BARBED_IRON_BARS.get(), RenderType.getCutoutMipped());
-        RenderTypeLookup.setRenderLayer(DustrialBlocks.PADDED_TRAPDOOR.get(), RenderType.getCutoutMipped());
-        RenderTypeLookup.setRenderLayer(DustrialBlocks.CHAIN_TRAPDOOR.get(), RenderType.getCutoutMipped());
-        RenderTypeLookup.setRenderLayer(DustrialBlocks.PADDED_DOOR.get(), RenderType.getCutoutMipped());
-        RenderTypeLookup.setRenderLayer(DustrialBlocks.CHAIN_DOOR.get(), RenderType.getCutoutMipped());
+
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
@@ -95,6 +93,23 @@ public class DustrialDecorMod
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
             // register a new block here
             LOGGER.info("HELLO from Register Block");
+        }
+    }
+
+    @Mod.EventBusSubscriber(modid = "dustrial_decor", bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientEventBusSubscriber {
+
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+
+            RenderTypeLookup.setRenderLayer(DustrialBlocks.CHAIN_LINK_FENCE.get(), RenderType.getCutoutMipped());
+            RenderTypeLookup.setRenderLayer(DustrialBlocks.BARBED_CHAIN_LINK_FENCE.get(), RenderType.getCutoutMipped());
+            RenderTypeLookup.setRenderLayer(DustrialBlocks.BARBED_IRON_BARS.get(), RenderType.getCutoutMipped());
+            RenderTypeLookup.setRenderLayer(DustrialBlocks.PADDED_TRAPDOOR.get(), RenderType.getCutoutMipped());
+            RenderTypeLookup.setRenderLayer(DustrialBlocks.CHAIN_TRAPDOOR.get(), RenderType.getCutoutMipped());
+            RenderTypeLookup.setRenderLayer(DustrialBlocks.PADDED_DOOR.get(), RenderType.getCutoutMipped());
+            RenderTypeLookup.setRenderLayer(DustrialBlocks.CHAIN_DOOR.get(), RenderType.getCutoutMipped());
+
         }
     }
 }
