@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "dustrial_decor:sheet_metal_walling"
+    }
+  },
+  "result": {
+    "item": "dustrial_decor:sheet_metal_siding"
+  }
+}

@@ -2,14 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "##",
+    "##",
     "##"
   ],
   "key": {
     "#": {
-      "tag": "dustrial_decor:industrial_iron_blocks"
+      "item": "dustrial_decor:sheet_metal"
     }
   },
   "result": {
-    "item": "dustrial_decor:industrial_iron_trapdoor"
+    "item": "dustrial_decor:sheet_metal_door",
+    "count": 3
   }
 }

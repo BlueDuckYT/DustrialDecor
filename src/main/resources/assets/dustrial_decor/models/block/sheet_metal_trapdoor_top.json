@@ -1,0 +1,6 @@
+{
+    "parent": "block/template_orientable_trapdoor_top",
+    "textures": {
+        "texture": "dustrial_decor:block/sheet_metal_trapdoor"
+    }
+}

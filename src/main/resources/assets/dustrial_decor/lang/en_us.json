@@ -13,6 +13,13 @@
   "block.dustrial_decor.mini_padded_block": "Mini Padded Block",
   "block.dustrial_decor.padded_trapdoor": "Padded Trapdoor",
   "block.dustrial_decor.padded_door": "Padded Door",
+  "item.dustrial_decor.sheet_metal": "Sheet Metal",
+  "block.dustrial_decor.sheet_metal_paneling": "Sheet Metal Paneling",
+  "block.dustrial_decor.sheet_metal_plating": "Sheet Metal Plating",
+  "block.dustrial_decor.sheet_metal_siding": "Sheet Metal Siding",
+  "block.dustrial_decor.sheet_metal_walling": "Sheet Metal Walling",
+  "block.dustrial_decor.sheet_metal_trapdoor": "Sheet Metal Trapdoor",
+  "block.dustrial_decor.sheet_metal_door": "Sheet Metal Door",
 
 
   "death.attack.sting.player": "{Player} was pricked to death"
