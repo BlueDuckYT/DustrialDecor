@@ -2,12 +2,14 @@ package blueduck.dustrial.dustrialdecor.registry;
 
 import blueduck.dustrial.dustrialdecor.DustrialDecorMod;
 import blueduck.dustrial.dustrialdecor.blocks.*;
+import blueduck.dustrial.dustrialdecor.blocks.DirectionalBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.util.SoundEvents;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -15,6 +17,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class DustrialBlocks {
+
+    public static final SoundType CARDBOARD_SOUND = new SoundType(1.0F, 1.0F, SoundEvents.ITEM_CROP_PLANT, SoundEvents.ITEM_CROP_PLANT, SoundEvents.ITEM_CROP_PLANT, SoundEvents.ITEM_CROP_PLANT, SoundEvents.ITEM_CROP_PLANT);
 
     public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, DustrialDecorMod.MODID);
     public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, DustrialDecorMod.MODID);
@@ -116,6 +120,20 @@ public class DustrialBlocks {
 
     public static final RegistryObject<Block> CINDER_BRICKS = BLOCKS.register("cinder_bricks", () -> new Block(Block.Properties.from(Blocks.STONE)));
     public static final RegistryObject<Item> CINDER_BRICKS_ITEM = ITEMS.register("cinder_bricks", () -> new BlockItem(CINDER_BRICKS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Item> CARDBOARD = ITEMS.register("cardboard", () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+
+    public static final RegistryObject<Block> CARDBOARD_BOX = BLOCKS.register("cardboard_box", () -> new DirectionalBlock(Block.Properties.create(Material.MISCELLANEOUS, MaterialColor.WOOD).hardnessAndResistance(1.0F, 0.3F).sound(CARDBOARD_SOUND)));
+    public static final RegistryObject<Item> CARDBOARD_BOX_ITEM = ITEMS.register("cardboard_box", () -> new BlockItem(CARDBOARD_BOX.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> FOLDED_CARDBOARD = BLOCKS.register("folded_cardboard", () -> new Block(Block.Properties.create(Material.MISCELLANEOUS, MaterialColor.WOOD).hardnessAndResistance(1.0F, 0.3F).sound(CARDBOARD_SOUND)));
+    public static final RegistryObject<Item> FOLDED_CARDBOARD_ITEM = ITEMS.register("folded_cardboard", () -> new BlockItem(FOLDED_CARDBOARD.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> SMOOTH_CARDBOARD = BLOCKS.register("smooth_cardboard", () -> new Block(Block.Properties.create(Material.MISCELLANEOUS, MaterialColor.WOOD).hardnessAndResistance(1.0F, 0.3F).sound(CARDBOARD_SOUND)));
+    public static final RegistryObject<Item> SMOOTH_CARDBOARD_ITEM = ITEMS.register("smooth_cardboard", () -> new BlockItem(SMOOTH_CARDBOARD.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> CARDBOARD_SCRAP = BLOCKS.register("cardboard_scrap", () -> new Block(Block.Properties.create(Material.MISCELLANEOUS, MaterialColor.WOOD).hardnessAndResistance(1.0F, 0.3F).sound(CARDBOARD_SOUND)));
+    public static final RegistryObject<Item> CARDBOARD_SCRAP_ITEM = ITEMS.register("cardboard_scrap", () -> new BlockItem(CARDBOARD_SCRAP.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
 
     public static void init() {

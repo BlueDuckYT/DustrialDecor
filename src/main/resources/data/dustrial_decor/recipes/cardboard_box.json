@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "dustrial_decor:folded_cardboard"
+    }
+  },
+  "result": {
+    "item": "dustrial_decor:cardboard_box"
+  }
+}

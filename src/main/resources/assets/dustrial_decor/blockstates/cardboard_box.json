@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=south": { "model": "dustrial_decor:block/cardboard_box" },
+    "facing=west": { "model": "dustrial_decor:block/cardboard_box", "y": 90 },
+    "facing=north": { "model": "dustrial_decor:block/cardboard_box", "y": 180 },
+    "facing=east": { "model": "dustrial_decor:block/cardboard_box", "y": 270 }
+  }
+}

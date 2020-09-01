@@ -30,6 +30,10 @@
   "block.dustrial_decor.cinder_block": "Cinder Block",
   "block.dustrial_decor.polished_cinder_block": "Polished Cinder Block",
   "block.dustrial_decor.cinder_bricks": "Cinder Bricks",
+  "block.dustrial_decor.cardboard_box": "Cardboard Box",
+  "block.dustrial_decor.folded_cardboard": "Folded Cardboard",
+  "block.dustrial_decor.smooth_cardboard": "Smooth Cardboard",
+  "block.dustrial_decor.cardboard_scrap": "Cardboard Scrap",
 
 
   "death.attack.sting.player": "{Player} was pricked to death"

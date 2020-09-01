@@ -16,7 +16,7 @@ modId="dustrial_decor" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 version="0.2.0" #mandatory
  # A display name for the mod
-displayName="'Dustrial Decor'" #mandatory
+displayName="'Dustrial Decor" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
 updateJSONURL="http://myurl.me/" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
@@ -24,12 +24,12 @@ updateJSONURL="http://myurl.me/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 
 # A text field displayed in the mod UI
-credits="Created by Blue Duck, textures and original idea by WDSPC" #optional
+credits="Created by Blue Duck, textures and original idea by WDSPC, some textures by SaikoChan" #optional
 # A text field displayed in the mod UI
 authors="Blue Duck and WDSPC" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Yeah, build a factory and stuff'''
+Build factories'''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.dustrial_decor]] #optional
     # the modid of the dependency
