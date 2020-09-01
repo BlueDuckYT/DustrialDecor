@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "dustrial_decor:item/rusty_sheet_metal_door"
+  }
+}

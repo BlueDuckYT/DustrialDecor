@@ -20,6 +20,16 @@
   "block.dustrial_decor.sheet_metal_walling": "Sheet Metal Walling",
   "block.dustrial_decor.sheet_metal_trapdoor": "Sheet Metal Trapdoor",
   "block.dustrial_decor.sheet_metal_door": "Sheet Metal Door",
+  "item.dustrial_decor.rusty_sheet_metal": "Rusty Sheet Metal",
+  "block.dustrial_decor.rusty_sheet_metal_paneling": "Rusty Sheet Metal Paneling",
+  "block.dustrial_decor.rusty_sheet_metal_plating": "Rusty Sheet Metal Plating",
+  "block.dustrial_decor.rusty_sheet_metal_siding": "Rusty Sheet Metal Siding",
+  "block.dustrial_decor.rusty_sheet_metal_walling": "Rusty Sheet Metal Walling",
+  "block.dustrial_decor.rusty_sheet_metal_trapdoor": "Rusty Sheet Metal Trapdoor",
+  "block.dustrial_decor.rusty_sheet_metal_door": "Rusty Sheet Metal Door",
+  "block.dustrial_decor.cinder_block": "Cinder Block",
+  "block.dustrial_decor.polished_cinder_block": "Polished Cinder Block",
+  "block.dustrial_decor.cinder_bricks": "Cinder Bricks",
 
 
   "death.attack.sting.player": "{Player} was pricked to death"

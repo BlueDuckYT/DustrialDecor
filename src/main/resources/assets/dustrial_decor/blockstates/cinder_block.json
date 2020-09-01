@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "dustrial_decor:block/cinder_block" },
+        "axis=z":   { "model": "dustrial_decor:block/cinder_block", "x": 90 },
+        "axis=x":   { "model": "dustrial_decor:block/cinder_block", "x": 90, "y": 90 }
+    }
+}

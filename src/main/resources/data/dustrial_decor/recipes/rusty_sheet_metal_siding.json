@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "dustrial_decor:rusty_sheet_metal"
+    }
+  },
+  "result": {
+    "item": "dustrial_decor:rusty_sheet_metal_siding",
+    "count": 18
+  }
+}
