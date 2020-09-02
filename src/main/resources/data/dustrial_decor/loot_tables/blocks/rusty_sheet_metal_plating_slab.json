@@ -12,7 +12,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "dustrial_decor:sheet_metal_paneling_slab",
+                  "block": "dustrial_decor:rusty_sheet_metal_plating_slab",
                   "properties": {
                     "type": "double"
                   }
@@ -24,7 +24,7 @@
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "dustrial_decor:sheet_metal_paneling_slab"
+          "name": "dustrial_decor:rusty_sheet_metal_plating_slab"
         }
       ]
     }

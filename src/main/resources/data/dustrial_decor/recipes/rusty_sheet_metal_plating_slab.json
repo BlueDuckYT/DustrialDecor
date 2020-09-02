@@ -5,11 +5,11 @@
   ],
   "key": {
     "#": {
-      "item": "dustrial_decor:sheet_metal_paneling"
+      "item": "dustrial_decor:rusty_sheet_metal_plating"
     }
   },
   "result": {
-    "item": "dustrial_decor:sheet_metal_paneling_slab",
+    "item": "dustrial_decor:rusty_sheet_metal_plating_slab",
     "count": 6
   }
 }

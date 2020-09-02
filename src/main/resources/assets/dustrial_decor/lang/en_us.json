@@ -24,6 +24,9 @@
   "block.dustrial_decor.sheet_metal_plating": "Sheet Metal Plating",
   "block.dustrial_decor.sheet_metal_siding": "Sheet Metal Siding",
   "block.dustrial_decor.sheet_metal_walling": "Sheet Metal Walling",
+  "block.dustrial_decor.sheet_metal_treading": "Sheet Metal Treading",
+  "block.dustrial_decor.sheet_metal_treading_slab": "Sheet Metal Treading Slab",
+  "block.dustrial_decor.sheet_metal_treading_stairs": "Sheet Metal Treading Stairs",
   "block.dustrial_decor.sheet_metal_trapdoor": "Sheet Metal Trapdoor",
   "block.dustrial_decor.sheet_metal_door": "Sheet Metal Door",
   "item.dustrial_decor.rusty_sheet_metal": "Rusty Sheet Metal",
@@ -33,6 +36,9 @@
   "block.dustrial_decor.rusty_sheet_metal_plating": "Rusty Sheet Metal Plating",
   "block.dustrial_decor.rusty_sheet_metal_siding": "Rusty Sheet Metal Siding",
   "block.dustrial_decor.rusty_sheet_metal_walling": "Rusty Sheet Metal Walling",
+  "block.dustrial_decor.rusty_sheet_metal_treading": "Rusty Sheet Metal Treading",
+  "block.dustrial_decor.rusty_sheet_metal_treading_slab": "Rusty Sheet Metal Treading Slab",
+  "block.dustrial_decor.rusty_sheet_metal_treading_stairs": "Rusty Sheet Metal Treading Stairs",
   "block.dustrial_decor.rusty_sheet_metal_trapdoor": "Rusty Sheet Metal Trapdoor",
   "block.dustrial_decor.rusty_sheet_metal_door": "Rusty Sheet Metal Door",
   "block.dustrial_decor.cinder_block": "Cinder Block",
@@ -40,7 +46,7 @@
   "block.dustrial_decor.cinder_bricks": "Cinder Bricks",
   "block.dustrial_decor.cinder_brick_slab": "Cinder Brick Slab",
   "block.dustrial_decor.cinder_brick_stairs": "Cinder Brick Stairs",
-  "block.dustrial_decor.cardboard": "Cardboard",
+  "item.dustrial_decor.cardboard": "Cardboard",
   "block.dustrial_decor.cardboard_box": "Cardboard Box",
   "block.dustrial_decor.folded_cardboard": "Folded Cardboard",
   "block.dustrial_decor.smooth_cardboard": "Smooth Cardboard",
@@ -48,6 +54,10 @@
   "block.dustrial_decor.smooth_cardboard_stairs": "Smooth Cardboard Stairs",
   "block.dustrial_decor.cardboard_scrap": "Cardboard Scrap",
 
+  "item.dustrial_decor.cardboard_helmet": "Cardboard Helmet",
+  "item.dustrial_decor.cardboard_chestplate": "Cardboard Chestplate",
+  "item.dustrial_decor.cardboard_leggings": "Cardboard Leggings",
+  "item.dustrial_decor.cardboard_boots": "Cardboard Boots",
 
   "death.attack.sting.player": "{Player} was pricked to death"
 }

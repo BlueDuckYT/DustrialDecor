@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "dustrial_decor:block/rusty_sheet_metal_treading",
+        "top": "dustrial_decor:block/rusty_sheet_metal_treading",
+        "side": "dustrial_decor:block/rusty_sheet_metal_treading"
+    }
+}

@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "#",
-    "##",
+    "#  ",
+    "## ",
     "###"
   ],
   "key": {
     "#": {
-      "item": "dustrial_decor:sheet_metal_paneling"
+      "item": "dustrial_decor:sheet_metal_treading"
     }
   },
   "result": {
-    "item": "dustrial_decor:sheet_metal_paneling_stairs",
+    "item": "dustrial_decor:sheet_metal_treading_stairs",
     "count": 4
   }
 }

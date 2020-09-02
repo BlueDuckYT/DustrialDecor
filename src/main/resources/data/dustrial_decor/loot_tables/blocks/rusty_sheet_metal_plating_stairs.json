@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dustrial_decor:sheet_metal_paneling_stairs"
+          "name": "dustrial_decor:rusty_sheet_metal_plating_stairs"
         }
       ],
       "conditions": [
