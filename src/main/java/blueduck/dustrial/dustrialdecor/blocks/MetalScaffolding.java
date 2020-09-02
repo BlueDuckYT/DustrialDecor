@@ -29,6 +29,7 @@ public class MetalScaffolding extends ScaffoldingBlock {
         BlockState blockstate = state.with(field_220118_a, Integer.valueOf(i)).with(field_220120_c, Boolean.valueOf(this.func_220116_a(worldIn, pos, i)));
         if ((!worldIn.getBlockState(pos.east()).isSolid()&& worldIn.getBlockState(pos.east()) != DustrialBlocks.METAL_SCAFFOLDING.get().getDefaultState()) && (!worldIn.getBlockState(pos.west()).isSolid() && worldIn.getBlockState(pos.west()) != DustrialBlocks.METAL_SCAFFOLDING.get().getDefaultState()) && (!worldIn.getBlockState(pos.north()).isSolid() && worldIn.getBlockState(pos.north()) != DustrialBlocks.METAL_SCAFFOLDING.get().getDefaultState()) && (!worldIn.getBlockState(pos.south()).isSolid() && worldIn.getBlockState(pos.south()) != DustrialBlocks.METAL_SCAFFOLDING.get().getDefaultState()) && (!worldIn.getBlockState(pos.down()).isSolid() && worldIn.getBlockState(pos.down()) != DustrialBlocks.METAL_SCAFFOLDING.get().getDefaultState())) {
             worldIn.destroyBlock(pos, true);
+            state.updateNeighbors(worldIn, pos, 0);
         }
         if (state != blockstate) {
             worldIn.setBlockState(pos, blockstate, 3);
@@ -48,9 +49,6 @@ public class MetalScaffolding extends ScaffoldingBlock {
         }
     }
 
-    public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-        return true;
-    }
     private boolean func_220116_a(IBlockReader p_220116_1_, BlockPos p_220116_2_, int p_220116_3_) {
         return p_220116_3_ > 0 && p_220116_1_.getBlockState(p_220116_2_.down()).getBlock() != this;
     }

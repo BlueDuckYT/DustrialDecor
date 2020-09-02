@@ -195,8 +195,8 @@ public class DustrialBlocks {
     public static final RegistryObject<Item> CARDBOARD_LEGGINGS = ITEMS.register("cardboard_leggings", () -> new CardboardArmor(CARDBOARD_ARMOR_MATERIAL, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)));
     public static final RegistryObject<Item> CARDBOARD_BOOTS = ITEMS.register("cardboard_boots", () -> new CardboardArmor(CARDBOARD_ARMOR_MATERIAL, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)));
 
-    public static final RegistryObject<Block> METAL_SCAFFOLDING = BLOCKS.register("metal_scaffolding", () -> new MetalScaffolding(Block.Properties.from(Blocks.IRON_BLOCK)));
-    public static final RegistryObject<Item> METAL_SCAFFOLDING_ITEM = ITEMS.register("metal_scaffolding", () -> new MetalScaffoldingItem(METAL_SCAFFOLDING.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+    //public static final RegistryObject<Block> METAL_SCAFFOLDING = BLOCKS.register("metal_scaffolding", () -> new MetalScaffolding(Block.Properties.from(Blocks.IRON_BLOCK)));
+    //public static final RegistryObject<Item> METAL_SCAFFOLDING_ITEM = ITEMS.register("metal_scaffolding", () -> new MetalScaffoldingItem(METAL_SCAFFOLDING.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
 
 
