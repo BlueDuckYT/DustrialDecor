@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "dustrial_decor:bolted_industrial_iron_block"
+    }
+  },
+  "result": {
+    "item": "dustrial_decor:bolted_industrial_iron_slab",
+    "count": 6
+  }
+}

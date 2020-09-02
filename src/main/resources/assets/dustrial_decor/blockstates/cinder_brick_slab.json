@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "dustrial_decor:block/cinder_brick_slab" },
+        "type=top": { "model": "dustrial_decor:block/cinder_brick_slab_top" },
+        "type=double": { "model": "dustrial_decor:block/cinder_bricks" }
+    }
+}

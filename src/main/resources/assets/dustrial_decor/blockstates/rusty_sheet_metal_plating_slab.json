@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "dustrial_decor:block/rusty_sheet_metal_paneling_slab" },
+        "type=top": { "model": "dustrial_decor:block/rusty_sheet_metal_paneling_slab_top" },
+        "type=double": { "model": "dustrial_decor:block/rusty_sheet_metal_plating" }
+    }
+}

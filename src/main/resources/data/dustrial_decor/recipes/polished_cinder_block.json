@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "dustrial_decor:cinder_block"
+    }
+  },
+  "result": {
+    "item": "dustrial_decor:polished_cinder_block",
+    "count": 4
+  }
+}

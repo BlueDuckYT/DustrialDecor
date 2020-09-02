@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "##",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "dustrial_decor:cinder_bricks"
+    }
+  },
+  "result": {
+    "item": "dustrial_decor:cinder_brick_stairs",
+    "count": 4
+  }
+}

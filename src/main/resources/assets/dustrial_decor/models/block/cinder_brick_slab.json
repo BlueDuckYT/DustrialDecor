@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "dustrial_decor:block/cinder_bricks",
+        "top": "dustrial_decor:block/cinder_bricks",
+        "side": "dustrial_decor:block/cinder_bricks"
+    }
+}
