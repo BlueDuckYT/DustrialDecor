@@ -6,7 +6,7 @@ import net.minecraft.block.StairsBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
@@ -39,7 +39,7 @@ public class PaddedStairs extends StairsBlock {
     }
 
     private void func_226946_a_(Entity p_226946_1_) {
-        Vec3d vec3d = p_226946_1_.getMotion();
+        Vector3d vec3d = p_226946_1_.getMotion();
         if (vec3d.y < 0.0D) {
             double d0 = p_226946_1_ instanceof LivingEntity ? 0.5D : 0.8D;
             p_226946_1_.setMotion(vec3d.x, -vec3d.y * d0, vec3d.z);

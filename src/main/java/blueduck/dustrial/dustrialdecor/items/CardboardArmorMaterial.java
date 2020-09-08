@@ -47,4 +47,9 @@ public class CardboardArmorMaterial implements IArmorMaterial {
     public float getToughness() {
         return 1;
     }
+
+    @Override
+    public float func_230304_f_() {
+        return 0;
+    }
 }
