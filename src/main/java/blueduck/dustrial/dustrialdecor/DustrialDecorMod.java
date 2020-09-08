@@ -38,7 +38,6 @@ public class DustrialDecorMod
 
     public static String MODID = "dustrial_decor";
 
-
     public DustrialDecorMod() {
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
