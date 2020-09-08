@@ -121,14 +121,14 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> RUSTY_SHEET_METAL_PLATING = BLOCKS.register("rusty_sheet_metal_plating", () -> new Block(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(3.0F, 3.5F).sound(SoundType.METAL)));
     public static final RegistryObject<Item> RUSTY_SHEET_METAL_PLATING_ITEM = ITEMS.register("rusty_sheet_metal_plating", () -> new BlockItem(RUSTY_SHEET_METAL_PLATING.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
-    public static final RegistryObject<Block> RUSTY_SHEET_METAL_PANELING = BLOCKS.register("rusty_sheet_metal_paneling", () -> new Block(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(3.0F, 3.5F).sound(SoundType.METAL)));
-    public static final RegistryObject<Item> RUSTY_SHEET_METAL_PANELING_ITEM = ITEMS.register("rusty_sheet_metal_paneling", () -> new BlockItem(RUSTY_SHEET_METAL_PANELING.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
-
     public static final RegistryObject<Block> RUSTY_SHEET_METAL_PLATING_SLAB = BLOCKS.register("rusty_sheet_metal_plating_slab", () -> new SlabBlock(Block.Properties.from(RUSTY_SHEET_METAL_PLATING.get())));
     public static final RegistryObject<Item> RUSTY_SHEET_METAL_PLATING_SLAB_ITEM = ITEMS.register("rusty_sheet_metal_plating_slab", () -> new BlockItem(RUSTY_SHEET_METAL_PLATING_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
     public static final RegistryObject<Block> RUSTY_SHEET_METAL_PLATING_STAIRS = BLOCKS.register("rusty_sheet_metal_plating_stairs", () -> new StairsBlock(() -> RUSTY_SHEET_METAL_PLATING.get().getDefaultState(), Block.Properties.from(RUSTY_SHEET_METAL_PLATING.get())));
     public static final RegistryObject<Item> RUSTY_SHEET_METAL_PLATING_STAIRS_ITEM = ITEMS.register("rusty_sheet_metal_plating_stairs", () -> new BlockItem(RUSTY_SHEET_METAL_PLATING_STAIRS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> RUSTY_SHEET_METAL_PANELING = BLOCKS.register("rusty_sheet_metal_paneling", () -> new Block(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(3.0F, 3.5F).sound(SoundType.METAL)));
+    public static final RegistryObject<Item> RUSTY_SHEET_METAL_PANELING_ITEM = ITEMS.register("rusty_sheet_metal_paneling", () -> new BlockItem(RUSTY_SHEET_METAL_PANELING.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
     public static final RegistryObject<Block> RUSTY_SHEET_METAL_SIDING = BLOCKS.register("rusty_sheet_metal_siding", () -> new Block(Block.Properties.create(Material.IRON, MaterialColor.IRON).hardnessAndResistance(3.0F, 3.5F).sound(SoundType.METAL)));
     public static final RegistryObject<Item> RUSTY_SHEET_METAL_SIDING_ITEM = ITEMS.register("rusty_sheet_metal_siding", () -> new BlockItem(RUSTY_SHEET_METAL_SIDING.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
