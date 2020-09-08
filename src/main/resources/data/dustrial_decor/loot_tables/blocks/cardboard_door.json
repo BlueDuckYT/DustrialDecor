@@ -6,6 +6,15 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "dustrial_decor:cardboard_door",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
           "name": "dustrial_decor:cardboard_door"
         }
       ],
