@@ -6,8 +6,12 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.storage.loot.LootPool;
+import net.minecraft.world.storage.loot.TableLootEntry;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -111,6 +115,33 @@ public class DustrialDecorMod
             RenderTypeLookup.setRenderLayer(DustrialBlocks.CHAIN_DOOR.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.CARDBOARD_DOOR.get(), RenderType.getCutoutMipped());
 
+        }
+    }
+    @Mod.EventBusSubscriber(modid = "dustrial_decor")
+    public static class LootEvents {
+        @SubscribeEvent
+        public static void onLootLoad(LootTableLoadEvent event) {
+            if (event.getName().equals(new ResourceLocation("minecraft", "chests/simple_dungeon"))) {
+                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).build());
+            }
+            if (event.getName().equals(new ResourceLocation("minecraft", "chests/pillager_outpost"))) {
+                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).build());
+            }
+            if (event.getName().equals(new ResourceLocation("minecraft", "chests/woodland_mansion"))) {
+                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).build());
+            }
+            if (event.getName().equals(new ResourceLocation("minecraft", "chests/shipwreck_supply"))) {
+                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).build());
+            }
+            if (event.getName().equals(new ResourceLocation("minecraft", "chests/stronghold_corridor"))) {
+                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).build());
+            }
+            if (event.getName().equals(new ResourceLocation("minecraft", "chests/village/village_toolsmith"))) {
+                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).build());
+            }
+            if (event.getName().equals(new ResourceLocation("minecraft", "chests/village/village_weaponsmith"))) {
+                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).build());
+            }
         }
     }
 }
