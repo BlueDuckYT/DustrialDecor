@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "dustrial_decor:rusty_sheet_metal"
+  },
+  "result": "minecraft:iron_ingot",
+  "experience": 0.35,
+  "cookingtime": 100
+}
