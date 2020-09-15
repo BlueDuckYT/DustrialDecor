@@ -52,6 +52,36 @@
             }
           ],
           "name": "dustrial_decor:cardboard"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 3.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ],
+          "name": "dustrial_decor:rusty_iron_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 7.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ],
+          "name": "dustrial_decor:rusty_iron_nugget"
         }
       ]
     }

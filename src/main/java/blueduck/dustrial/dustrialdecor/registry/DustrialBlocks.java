@@ -197,6 +197,19 @@ public class DustrialBlocks {
     public static final RegistryObject<Item> CARDBOARD_LEGGINGS = ITEMS.register("cardboard_leggings", () -> new CardboardArmor(CARDBOARD_ARMOR_MATERIAL, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)));
     public static final RegistryObject<Item> CARDBOARD_BOOTS = ITEMS.register("cardboard_boots", () -> new CardboardArmor(CARDBOARD_ARMOR_MATERIAL, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)));
 
+    public static final RegistryObject<Item> RUSTY_IRON_INGOT = ITEMS.register("rusty_iron_ingot", () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> RUSTY_IRON_NUGGET = ITEMS.register("rusty_iron_nugget", () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+
+    public static final RegistryObject<Block> RUSTY_IRON_BLOCK = BLOCKS.register("rusty_iron_block", () -> new Block(Block.Properties.from(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Item> RUSTY_IRON_BLOCK_ITEM = ITEMS.register("rusty_iron_block", () -> new BlockItem(RUSTY_IRON_BLOCK.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> WRAPPED_CHAINS = BLOCKS.register("wrapped_chains", () -> new RotatedPillarBlock(Block.Properties.from(Blocks.field_235341_dI_)));
+    public static final RegistryObject<Item> WRAPPED_CHAINS_ITEM = ITEMS.register("wrapped_chains", () -> new BlockItem(WRAPPED_CHAINS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+
+    //public static final RegistryObject<Block> LARGE_CHAIN = BLOCKS.register("large_chain", () -> new LargeChain(Block.Properties.from(Blocks.field_235341_dI_)));
+    //public static final RegistryObject<Item> LARGE_CHAIN_ITEM = ITEMS.register("large_chain", () -> new BlockItem(LARGE_CHAIN.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
 
 
     public static void init() {

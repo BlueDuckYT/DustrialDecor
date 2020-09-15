@@ -141,6 +141,9 @@ public class DustrialDecorMod
             if (event.getName().equals(new ResourceLocation("minecraft", "chests/village/village_weaponsmith"))) {
                 event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).build());
             }
+            if (event.getName().equals(new ResourceLocation("minecraft", "entities/zombie"))) {
+                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "entities/zombie"))).build());
+            }
         }
     }
 }
