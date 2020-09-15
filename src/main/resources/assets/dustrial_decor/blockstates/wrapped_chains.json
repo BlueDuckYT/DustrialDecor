@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "dustrial_decor:block/wrapped_chains" }
+    "axis=y":  { "model": "dustrial_decor:block/wrapped_chains" },
+    "axis=z":   { "model": "dustrial_decor:block/wrapped_chains", "x": 90 },
+    "axis=x":   { "model": "dustrial_decor:block/wrapped_chains", "x": 90, "y": 90 }
   }
 }
