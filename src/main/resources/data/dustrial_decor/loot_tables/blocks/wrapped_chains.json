@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dustrial_decor:wrapped_chain"
+          "name": "dustrial_decor:wrapped_chains"
         }
       ],
       "conditions": [
