@@ -203,8 +203,20 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> RUSTY_IRON_BLOCK = BLOCKS.register("rusty_iron_block", () -> new Block(Block.Properties.from(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Item> RUSTY_IRON_BLOCK_ITEM = ITEMS.register("rusty_iron_block", () -> new BlockItem(RUSTY_IRON_BLOCK.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
+    public static final RegistryObject<Block> RUSTY_IRON_TRAPDOOR = BLOCKS.register("rusty_iron_trapdoor", () -> new DustrialTrapDoor(Block.Properties.from(Blocks.IRON_DOOR)));
+    public static final RegistryObject<Item> RUSTY_IRON_TRAPDOOR_ITEM = ITEMS.register("rusty_iron_trapdoor", () -> new BlockItem(RUSTY_IRON_TRAPDOOR.get(), new Item.Properties().group(ItemGroup.REDSTONE)));
+
+    public static final RegistryObject<Block> RUSTY_IRON_DOOR = BLOCKS.register("rusty_iron_door", () -> new DustrialDoor(Block.Properties.from(RUSTY_IRON_TRAPDOOR.get())));
+    public static final RegistryObject<Item> RUSTY_IRON_DOOR_ITEM = ITEMS.register("rusty_iron_door", () -> new BlockItem(RUSTY_IRON_DOOR.get(), new Item.Properties().group(ItemGroup.REDSTONE)));
+
     public static final RegistryObject<Block> WRAPPED_CHAINS = BLOCKS.register("wrapped_chains", () -> new RotatedPillarBlock(Block.Properties.from(Blocks.field_235341_dI_)));
     public static final RegistryObject<Item> WRAPPED_CHAINS_ITEM = ITEMS.register("wrapped_chains", () -> new BlockItem(WRAPPED_CHAINS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> IRON_BAR_TRAPDOOR = BLOCKS.register("iron_bar_trapdoor", () -> new DustrialTrapDoor(Block.Properties.from(Blocks.IRON_BARS)));
+    public static final RegistryObject<Item> IRON_BAR_TRAPDOOR_ITEM = ITEMS.register("iron_bar_trapdoor", () -> new BlockItem(IRON_BAR_TRAPDOOR.get(), new Item.Properties().group(ItemGroup.REDSTONE)));
+
+    public static final RegistryObject<Block> IRON_BAR_DOOR = BLOCKS.register("iron_bar_door", () -> new DustrialDoor(Block.Properties.from(IRON_BAR_TRAPDOOR.get())));
+    public static final RegistryObject<Item> IRON_BAR_DOOR_ITEM = ITEMS.register("iron_bar_door", () -> new BlockItem(IRON_BAR_DOOR.get(), new Item.Properties().group(ItemGroup.REDSTONE)));
 
 
     //public static final RegistryObject<Block> LARGE_CHAIN = BLOCKS.register("large_chain", () -> new LargeChain(Block.Properties.from(Blocks.field_235341_dI_)));
