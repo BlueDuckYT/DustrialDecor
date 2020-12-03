@@ -251,8 +251,11 @@ public class DustrialBlocks {
         DesertVillagePools.init();
 
         //addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/pillager_prison"), 1);
-        addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/mason"), 5);
+        addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/mason"), 4);
+        addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/mason_2"), 4);
         addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/workshop"), 6);
+        addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/insane_house"), 2);
+        addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/cardboard_castle"), 3);
 
         addToPool(new ResourceLocation("village/taiga/houses"), new ResourceLocation("dustrial_decor:village/tool_smith"), 4);
 
