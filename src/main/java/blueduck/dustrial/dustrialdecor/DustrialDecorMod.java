@@ -6,6 +6,10 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.merchant.villager.VillagerProfession;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.item.MerchantOffer;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.TableLootEntry;
 import net.minecraft.util.ResourceLocation;
@@ -13,6 +17,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -148,6 +153,15 @@ public class DustrialDecorMod
             }
             if (event.getName().equals(new ResourceLocation("minecraft", "entities/zombie"))) {
                 event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "entities/zombie"))).name("dustrial_inject").build());
+            }
+        }
+
+        @SubscribeEvent
+        public static void villagerTrades(final VillagerTradesEvent event) {
+            if (event.getType() == VillagerProfession.MASON) {
+                event.getTrades().get(3).add((entity, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), new ItemStack(DustrialBlocks.CINDER_BRICKS_ITEM.get(), 16), 12, 10, 0.05F));
+                event.getTrades().get(3).add((entity, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), new ItemStack(DustrialBlocks.CINDER_BLOCK_ITEM.get(), 16), 12, 10, 0.05F));
+                event.getTrades().get(3).add((entity, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), new ItemStack(DustrialBlocks.POLISHED_CINDER_BLOCK_ITEM.get(), 16), 12, 10, 0.05F));
             }
         }
     }
