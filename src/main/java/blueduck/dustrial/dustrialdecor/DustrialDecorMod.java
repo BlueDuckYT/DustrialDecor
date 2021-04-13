@@ -1,12 +1,18 @@
 package blueduck.dustrial.dustrialdecor;
 
+import blueduck.dustrial.dustrialdecor.config.ConfigHelper;
+import blueduck.dustrial.dustrialdecor.config.DustrialDecorConfig;
 import blueduck.dustrial.dustrialdecor.registry.DustrialBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.merchant.villager.VillagerProfession;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.MerchantOffer;
@@ -17,12 +23,14 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
@@ -43,7 +51,11 @@ public class DustrialDecorMod
 
     public static String MODID = "dustrial_decor";
 
+    public static DustrialDecorConfig CONFIG;
+
     public DustrialDecorMod() {
+
+        CONFIG = ConfigHelper.register(ModConfig.Type.COMMON, DustrialDecorConfig::new);
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -103,6 +115,34 @@ public class DustrialDecorMod
             LOGGER.info("HELLO from Register Block");
         }
     }
+
+    @SubscribeEvent
+    public void entitySpawn(LivingSpawnEvent.SpecialSpawn event) {
+        if (CONFIG.MOBS_SPAWN_WITH_CARDBOARD_ARMOR.get() && !event.getWorld().isRemote() && event.getEntity().getEntityWorld().getRandom().nextDouble() < 0.05) {
+            EntityType<?> type = event.getEntityLiving().getType();
+            if ((type == EntityType.ZOMBIE
+                    || type == EntityType.SKELETON
+                    || type == EntityType.STRAY
+                    || type == EntityType.HUSK
+                    || type == EntityType.DROWNED)
+                    && event.getEntityLiving() instanceof MobEntity
+                    && event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty()
+                    && event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.CHEST).isEmpty()
+                    && event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.LEGS).isEmpty()
+                    && event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.FEET).isEmpty()) {
+                        MobEntity entity = (MobEntity) event.getEntityLiving();
+                        entity.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(DustrialBlocks.CARDBOARD_HELMET.get()));
+                        entity.setDropChance(EquipmentSlotType.HEAD, 0.085F);
+                        entity.setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(DustrialBlocks.CARDBOARD_CHESTPLATE.get()));
+                        entity.setDropChance(EquipmentSlotType.CHEST, 0.085F);
+                        entity.setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(DustrialBlocks.CARDBOARD_LEGGINGS.get()));
+                        entity.setDropChance(EquipmentSlotType.LEGS, 0.085F);
+                        entity.setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(DustrialBlocks.CARDBOARD_BOOTS.get()));
+                        entity.setDropChance(EquipmentSlotType.FEET, 0.085F);
+
+                    }
+                }
+            }
 
     @Mod.EventBusSubscriber(modid = "dustrial_decor", bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientEventBusSubscriber {

@@ -244,21 +244,22 @@ public class DustrialBlocks {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 
 
-        PlainsVillagePools.init();
-        TaigaVillagePools.init();
-        SnowyVillagePools.init();
-        SavannaVillagePools.init();
-        DesertVillagePools.init();
+        if (DustrialDecorMod.CONFIG.VILLAGE_HOUSES.get()) {
+            PlainsVillagePools.init();
+            TaigaVillagePools.init();
+            SnowyVillagePools.init();
+            SavannaVillagePools.init();
+            DesertVillagePools.init();
 
-        //addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/pillager_prison"), 1);
-        addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/mason"), 4);
-        addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/mason_2"), 4);
-        addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/workshop"), 6);
-        addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/insane_house"), 2);
-        addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/cardboard_castle"), 3);
+            //addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/pillager_prison"), 1);
+            addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/mason"), 4);
+            //addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/mason_2"), 4);
+            //addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/workshop"), 6);
+            //addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/insane_house"), 2);
+            addToPool(new ResourceLocation("village/plains/houses"), new ResourceLocation("dustrial_decor:village/cardboard_castle"), 1);
 
-        addToPool(new ResourceLocation("village/taiga/houses"), new ResourceLocation("dustrial_decor:village/tool_smith"), 4);
-
+            //addToPool(new ResourceLocation("village/taiga/houses"), new ResourceLocation("dustrial_decor:village/tool_smith"), 4);
+        }
     }
 
     private static void addToPool(ResourceLocation pool, ResourceLocation toAdd, int weight) {
