@@ -170,29 +170,31 @@ public class DustrialDecorMod
     public static class LootEvents {
         @SubscribeEvent
         public static void onLootLoad(LootTableLoadEvent event) {
-            if (event.getName().equals(new ResourceLocation("minecraft", "chests/simple_dungeon"))) {
-                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
-            }
-            if (event.getName().equals(new ResourceLocation("minecraft", "chests/pillager_outpost"))) {
-                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
-            }
-            if (event.getName().equals(new ResourceLocation("minecraft", "chests/woodland_mansion"))) {
-                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
-            }
-            if (event.getName().equals(new ResourceLocation("minecraft", "chests/shipwreck_supply"))) {
-                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
-            }
-            if (event.getName().equals(new ResourceLocation("minecraft", "chests/stronghold_corridor"))) {
-                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
-            }
-            if (event.getName().equals(new ResourceLocation("minecraft", "chests/village/village_toolsmith"))) {
-                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
-            }
-            if (event.getName().equals(new ResourceLocation("minecraft", "chests/village/village_weaponsmith"))) {
-                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
-            }
-            if (event.getName().equals(new ResourceLocation("minecraft", "entities/zombie"))) {
-                event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "entities/zombie"))).name("dustrial_inject").build());
+            if (CONFIG.LOOT_TABLE_MODIFICATION.get()) {
+                if (event.getName().equals(new ResourceLocation("minecraft", "chests/simple_dungeon"))) {
+                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
+                }
+                if (event.getName().equals(new ResourceLocation("minecraft", "chests/pillager_outpost"))) {
+                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
+                }
+                if (event.getName().equals(new ResourceLocation("minecraft", "chests/woodland_mansion"))) {
+                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
+                }
+                if (event.getName().equals(new ResourceLocation("minecraft", "chests/shipwreck_supply"))) {
+                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
+                }
+                if (event.getName().equals(new ResourceLocation("minecraft", "chests/stronghold_corridor"))) {
+                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
+                }
+                if (event.getName().equals(new ResourceLocation("minecraft", "chests/village/village_toolsmith"))) {
+                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
+                }
+                if (event.getName().equals(new ResourceLocation("minecraft", "chests/village/village_weaponsmith"))) {
+                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
+                }
+                if (event.getName().equals(new ResourceLocation("minecraft", "entities/zombie"))) {
+                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "entities/zombie"))).name("dustrial_inject").build());
+                }
             }
         }
 
