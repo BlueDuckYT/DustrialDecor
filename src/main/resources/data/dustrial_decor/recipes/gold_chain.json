@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "$",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:gold_nugget"
+    },
+    "$": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "dustrial_decor:gold_chain"
+  }
+}

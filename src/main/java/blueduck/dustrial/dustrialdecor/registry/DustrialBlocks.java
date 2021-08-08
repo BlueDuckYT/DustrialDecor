@@ -69,6 +69,16 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> BARBED_IRON_BARS = BLOCKS.register("barbed_iron_bars", () -> new DustrialPane(Block.Properties.from(Blocks.IRON_BARS).sound(SoundType.METAL), false, true));
     public static final RegistryObject<Item> BARBED_IRON_BARS_ITEM = ITEMS.register("barbed_iron_bars", () -> new BlockItem(BARBED_IRON_BARS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
+    public static final RegistryObject<Block> GOLD_CHAIN = BLOCKS.register("gold_chain", () -> new ChainBlock(Block.Properties.from(Blocks.CHAIN)));
+    public static final RegistryObject<Item> GOLD_CHAIN_ITEM = ITEMS.register("gold_chain", () -> new BlockItem(GOLD_CHAIN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+
+    public static final RegistryObject<Block> LARGE_CHAIN = BLOCKS.register("large_chain", () -> new LargeChain(Block.Properties.from(Blocks.CHAIN)));
+    public static final RegistryObject<Item> LARGE_CHAIN_ITEM = ITEMS.register("large_chain", () -> new BlockItem(LARGE_CHAIN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+
+    public static final RegistryObject<Block> LARGE_GOLD_CHAIN = BLOCKS.register("large_gold_chain", () -> new LargeChain(Block.Properties.from(Blocks.CHAIN)));
+    public static final RegistryObject<Item> LARGE_GOLD_CHAIN_ITEM = ITEMS.register("large_gold_chain", () -> new BlockItem(LARGE_GOLD_CHAIN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+
+
     public static final RegistryObject<Block> CHAIN_TRAPDOOR = BLOCKS.register("chain_trapdoor", () -> new DustrialTrapDoor(Block.Properties.create(Material.ROCK).hardnessAndResistance(1F, 1F).sound(SoundType.CHAIN)));
     public static final RegistryObject<Item> CHAIN_TRAPDOOR_ITEM = ITEMS.register("chain_trapdoor", () -> new BlockItem(CHAIN_TRAPDOOR.get(), new Item.Properties().group(ItemGroup.REDSTONE)));
 

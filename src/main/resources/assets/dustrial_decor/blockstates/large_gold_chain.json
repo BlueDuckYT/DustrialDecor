@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "dustrial_decor:block/large_gold_chain",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "dustrial_decor:block/large_gold_chain"
+    },
+    "axis=z": {
+      "model": "dustrial_decor:block/large_gold_chain",
+      "x": 90
+    }
+  }
+}

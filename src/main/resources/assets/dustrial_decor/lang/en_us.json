@@ -63,6 +63,9 @@
   "block.dustrial_decor.rusty_iron_trapdoor": "Rusty Iron Trapdoor",
   "block.dustrial_decor.iron_bar_door": "Iron Bar Door",
   "block.dustrial_decor.iron_bar_trapdoor": "Iron Bar Trapdoor",
+  "block.dustrial_decor.gold_chain": "Gold Chain",
+  "block.dustrial_decor.large_chain": "Large Chain",
+  "block.dustrial_decor.large_gold_chain": "Large Gold Chain",
 
   "item.dustrial_decor.cardboard_helmet": "Cardboard Helmet",
   "item.dustrial_decor.cardboard_chestplate": "Cardboard Chestplate",

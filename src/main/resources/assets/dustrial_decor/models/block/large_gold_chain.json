@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "dustrial_decor:block/large_gold_chain"
+  }
+}
