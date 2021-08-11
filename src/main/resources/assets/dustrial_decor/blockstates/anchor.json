@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "dustrial_decor:block/anchor_bottom"
+    },
+    "half=upper": {
+      "model": "dustrial_decor:block/anchor_top"
+    }
+  }
+}

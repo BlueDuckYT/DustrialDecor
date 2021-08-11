@@ -80,6 +80,12 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> LARGE_GOLD_CHAIN = BLOCKS.register("large_gold_chain", () -> new LargeChain(Block.Properties.from(Blocks.CHAIN)));
     public static final RegistryObject<Item> LARGE_GOLD_CHAIN_ITEM = ITEMS.register("large_gold_chain", () -> new BlockItem(LARGE_GOLD_CHAIN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 
+    public static final RegistryObject<Block> ANCHOR = BLOCKS.register("anchor", () -> new DoubleBlock(Block.Properties.from(Blocks.CHAIN)));
+    public static final RegistryObject<Item> ANCHOR_ITEM = ITEMS.register("anchor", () -> new BlockItem(ANCHOR.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+
+    public static final RegistryObject<Block> HOOK = BLOCKS.register("hook", () -> new HookBlock(Block.Properties.from(Blocks.CHAIN)));
+    public static final RegistryObject<Item> HOOK_ITEM = ITEMS.register("hook", () -> new BlockItem(HOOK.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+
 
     public static final RegistryObject<Block> CHAIN_TRAPDOOR = BLOCKS.register("chain_trapdoor", () -> new DustrialTrapDoor(Block.Properties.create(Material.ROCK).hardnessAndResistance(1F, 1F).sound(SoundType.CHAIN)));
     public static final RegistryObject<Item> CHAIN_TRAPDOOR_ITEM = ITEMS.register("chain_trapdoor", () -> new BlockItem(CHAIN_TRAPDOOR.get(), new Item.Properties().group(ItemGroup.REDSTONE)));
@@ -281,7 +287,7 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> RAINBOW_NEON_LIGHT = BLOCKS.register("rainbow_neon_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 15)));
     public static final RegistryObject<Item> RAINBOW_NEON_LIGHT_ITEM = ITEMS.register("rainbow_neon_light", () -> new BlockItem(RAINBOW_NEON_LIGHT.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
-    public static final RegistryObject<Block> BLACK_LIGHT = BLOCKS.register("black_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 10)));
+    public static final RegistryObject<Block> BLACK_LIGHT = BLOCKS.register("black_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 7)));
     public static final RegistryObject<Item> BLACK_LIGHT_ITEM = ITEMS.register("black_light", () -> new BlockItem(BLACK_LIGHT.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
 

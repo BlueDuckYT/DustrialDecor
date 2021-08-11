@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " $ ",
+    " # ",
+    "###"
+  ],
+  "key": {
+    "$": {
+      "item": "dustrial_decor:large_chain"
+    },
+    "#": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "dustrial_decor:anchor"
+  }
+}

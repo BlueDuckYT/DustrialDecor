@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "dustrial_decor:block/hook"
+      },
+      {
+        "model": "dustrial_decor:block/hook",
+        "y": 180
+      }
+    ]
+  }
+}

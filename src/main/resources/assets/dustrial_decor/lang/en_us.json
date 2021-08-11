@@ -66,6 +66,8 @@
   "block.dustrial_decor.gold_chain": "Gold Chain",
   "block.dustrial_decor.large_chain": "Large Chain",
   "block.dustrial_decor.large_gold_chain": "Large Gold Chain",
+  "block.dustrial_decor.anchor": "Anchor",
+  "block.dustrial_decor.hook": "Hook",
   "block.dustrial_decor.large_lantern": "Large Lantern",
   "block.dustrial_decor.large_soul_lantern": "Large Soul Lantern",
   "block.dustrial_decor.large_ender_lantern": "Large Ender Lantern",
@@ -77,6 +79,7 @@
   "block.dustrial_decor.blue_neon_light": "Blue Neon Light",
   "block.dustrial_decor.pink_neon_light": "Pink Neon Light",
   "block.dustrial_decor.purple_neon_light": "Purple Neon Light",
+  "block.dustrial_decor.rainbow_neon_light": "Rainbow Neon Light",
   "block.dustrial_decor.black_light": "Black Light",
 
   "item.dustrial_decor.cardboard_helmet": "Cardboard Helmet",

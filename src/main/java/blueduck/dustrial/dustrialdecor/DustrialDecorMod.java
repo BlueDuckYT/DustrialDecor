@@ -165,6 +165,8 @@ public class DustrialDecorMod
             RenderTypeLookup.setRenderLayer(DustrialBlocks.GOLD_CHAIN.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.LARGE_CHAIN.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.LARGE_GOLD_CHAIN.get(), RenderType.getCutoutMipped());
+            RenderTypeLookup.setRenderLayer(DustrialBlocks.ANCHOR.get(), RenderType.getCutoutMipped());
+            RenderTypeLookup.setRenderLayer(DustrialBlocks.HOOK.get(), RenderType.getCutoutMipped());
 
 
         }
