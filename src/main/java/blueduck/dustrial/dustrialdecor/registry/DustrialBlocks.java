@@ -254,6 +254,35 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> LARGE_ENDER_LANTERN = conditionallyRegisterBlock("large_ender_lantern", () -> new Block(Block.Properties.from(Blocks.LANTERN).setLightLevel(blockState -> 15)), () -> isLoaded("endergetic"));
     public static final RegistryObject<Item> LARGE_ENDER_LANTERN_ITEM = conditionallyRegisterItem("large_ender_lantern", () -> new BlockItem(LARGE_ENDER_LANTERN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)), () -> isLoaded("endergetic"));
 
+    public static final RegistryObject<Block> RED_NEON_LIGHT = BLOCKS.register("red_neon_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 15)));
+    public static final RegistryObject<Item> RED_NEON_LIGHT_ITEM = ITEMS.register("red_neon_light", () -> new BlockItem(RED_NEON_LIGHT.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> ORANGE_NEON_LIGHT = BLOCKS.register("orange_neon_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 15)));
+    public static final RegistryObject<Item> ORANGE_NEON_LIGHT_ITEM = ITEMS.register("orange_neon_light", () -> new BlockItem(ORANGE_NEON_LIGHT.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> YELLOW_NEON_LIGHT = BLOCKS.register("yellow_neon_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 15)));
+    public static final RegistryObject<Item> YELLOW_NEON_LIGHT_ITEM = ITEMS.register("yellow_neon_light", () -> new BlockItem(YELLOW_NEON_LIGHT.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> GREEN_NEON_LIGHT = BLOCKS.register("green_neon_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 15)));
+    public static final RegistryObject<Item> GREEN_NEON_LIGHT_ITEM = ITEMS.register("green_neon_light", () -> new BlockItem(GREEN_NEON_LIGHT.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> CYAN_NEON_LIGHT = BLOCKS.register("cyan_neon_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 15)));
+    public static final RegistryObject<Item> CYAN_NEON_LIGHT_ITEM = ITEMS.register("cyan_neon_light", () -> new BlockItem(CYAN_NEON_LIGHT.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> BLUE_NEON_LIGHT = BLOCKS.register("blue_neon_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 15)));
+    public static final RegistryObject<Item> BLUE_NEON_LIGHT_ITEM = ITEMS.register("blue_neon_light", () -> new BlockItem(BLUE_NEON_LIGHT.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> PINK_NEON_LIGHT = BLOCKS.register("pink_neon_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 15)));
+    public static final RegistryObject<Item> PINK_NEON_LIGHT_ITEM = ITEMS.register("pink_neon_light", () -> new BlockItem(PINK_NEON_LIGHT.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> PURPLE_NEON_LIGHT = BLOCKS.register("purple_neon_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 15)));
+    public static final RegistryObject<Item> PURPLE_NEON_LIGHT_ITEM = ITEMS.register("purple_neon_light", () -> new BlockItem(PURPLE_NEON_LIGHT.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> RAINBOW_NEON_LIGHT = BLOCKS.register("rainbow_neon_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 15)));
+    public static final RegistryObject<Item> RAINBOW_NEON_LIGHT_ITEM = ITEMS.register("rainbow_neon_light", () -> new BlockItem(RAINBOW_NEON_LIGHT.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> BLACK_LIGHT = BLOCKS.register("black_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 10)));
+    public static final RegistryObject<Item> BLACK_LIGHT_ITEM = ITEMS.register("black_light", () -> new BlockItem(BLACK_LIGHT.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
 
     //public static final RegistryObject<Block> LARGE_CHAIN = BLOCKS.register("large_chain", () -> new LargeChain(Block.Properties.from(Blocks.field_235341_dI_)));

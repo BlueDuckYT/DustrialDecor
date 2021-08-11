@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "$$$",
+    "$#$",
+    "$$$"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:glowstone"
+    },
+    "$": {
+      "tag": "forge:glass/blue"
+    }
+  },
+  "result": {
+    "item": "dustrial_decor:blue_neon_light",
+    "count": 8
+  }
+}
