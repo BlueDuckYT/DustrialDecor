@@ -23,6 +23,7 @@ import net.minecraft.world.gen.feature.jigsaw.LegacySingleJigsawPiece;
 import net.minecraft.world.gen.feature.structure.*;
 import net.minecraft.world.gen.feature.template.ProcessorLists;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -30,6 +31,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
 import java.util.Random;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public class DustrialBlocks {
@@ -243,6 +245,16 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> IRON_BAR_DOOR = BLOCKS.register("iron_bar_door", () -> new DustrialDoor(Block.Properties.from(IRON_BAR_TRAPDOOR.get())));
     public static final RegistryObject<Item> IRON_BAR_DOOR_ITEM = ITEMS.register("iron_bar_door", () -> new BlockItem(IRON_BAR_DOOR.get(), new Item.Properties().group(ItemGroup.REDSTONE)));
 
+    public static final RegistryObject<Block> LARGE_LANTERN = BLOCKS.register("large_lantern", () -> new Block(Block.Properties.from(Blocks.LANTERN).setLightLevel(blockState -> 15)));
+    public static final RegistryObject<Item> LARGE_LANTERN_ITEM = ITEMS.register("large_lantern", () -> new BlockItem(LARGE_LANTERN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+
+    public static final RegistryObject<Block> LARGE_SOUL_LANTERN = BLOCKS.register("large_soul_lantern", () -> new Block(Block.Properties.from(Blocks.LANTERN).setLightLevel(blockState -> 15)));
+    public static final RegistryObject<Item> LARGE_SOUL_LANTERN_ITEM = ITEMS.register("large_soul_lantern", () -> new BlockItem(LARGE_SOUL_LANTERN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+
+    public static final RegistryObject<Block> LARGE_ENDER_LANTERN = conditionallyRegisterBlock("large_ender_lantern", () -> new Block(Block.Properties.from(Blocks.LANTERN).setLightLevel(blockState -> 15)), () -> isLoaded("endergetic"));
+    public static final RegistryObject<Item> LARGE_ENDER_LANTERN_ITEM = conditionallyRegisterItem("large_ender_lantern", () -> new BlockItem(LARGE_ENDER_LANTERN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)), () -> isLoaded("endergetic"));
+
+
 
     //public static final RegistryObject<Block> LARGE_CHAIN = BLOCKS.register("large_chain", () -> new LargeChain(Block.Properties.from(Blocks.field_235341_dI_)));
     //public static final RegistryObject<Item> LARGE_CHAIN_ITEM = ITEMS.register("large_chain", () -> new BlockItem(LARGE_CHAIN.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
@@ -279,6 +291,21 @@ public class DustrialBlocks {
         newPieces.add(new Pair<>(new LegacySingleJigsawPiece(Either.left(toAdd), () -> ProcessorLists.field_244101_a, JigsawPattern.PlacementBehaviour.RIGID), weight));
         ResourceLocation name = old.getName();
         Registry.register(WorldGenRegistries.JIGSAW_POOL, pool, new JigsawPattern(pool, name, newPieces));
+    }
+
+    public static RegistryObject<Item> conditionallyRegisterItem(String registryName, Supplier<Item> item, Supplier<Boolean> condition) {
+        if (condition.get())
+            return ITEMS.register(registryName, item);
+        return null;
+    }
+    public static RegistryObject<Block> conditionallyRegisterBlock(String registryName, Supplier<Block> block, Supplier<Boolean> condition) {
+        if (condition.get())
+            return BLOCKS.register(registryName, block);
+        return null;
+    }
+
+    public static boolean isLoaded(String modid) {
+        return ModList.get().isLoaded(modid);
     }
 
 }

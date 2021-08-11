@@ -66,6 +66,9 @@
   "block.dustrial_decor.gold_chain": "Gold Chain",
   "block.dustrial_decor.large_chain": "Large Chain",
   "block.dustrial_decor.large_gold_chain": "Large Gold Chain",
+  "block.dustrial_decor.large_lantern": "Large Lantern",
+  "block.dustrial_decor.large_soul_lantern": "Large Soul Lantern",
+  "block.dustrial_decor.large_ender_lantern": "Large Ender Lantern",
 
   "item.dustrial_decor.cardboard_helmet": "Cardboard Helmet",
   "item.dustrial_decor.cardboard_chestplate": "Cardboard Chestplate",

@@ -1,0 +1,33 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "item": "endergetic:ender_torch",
+          "type": "forge:item_exists"
+        }
+      ],
+
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "$$$",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:iron_ingot"
+          },
+          "$": {
+            "item": "endergetic:ender_torch"
+          }
+        },
+        "result": {
+          "item": "dustrial_decor:large_ender_lantern"
+        }
+      }
+    }
+  ]
+}
