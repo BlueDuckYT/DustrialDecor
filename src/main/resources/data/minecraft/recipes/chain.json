@@ -7,14 +7,14 @@
   ],
   "key": {
     "#": {
-      "item": "minecraft:gold_nugget"
+      "item": "minecraft:iron_nugget"
     },
     "$": {
-      "item": "minecraft:gold_ingot"
+      "item": "minecraft:iron_ingot"
     }
   },
   "result": {
-    "item": "dustrial_decor:gold_chain",
+    "item": "minecraft:chain",
     "count": 8
   }
 }

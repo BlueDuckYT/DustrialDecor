@@ -245,6 +245,9 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> WRAPPED_CHAINS = BLOCKS.register("wrapped_chains", () -> new RotatedPillarBlock(Block.Properties.from(Blocks.CHAIN)));
     public static final RegistryObject<Item> WRAPPED_CHAINS_ITEM = ITEMS.register("wrapped_chains", () -> new BlockItem(WRAPPED_CHAINS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
+    public static final RegistryObject<Block> WRAPPED_GOLD_CHAINS = BLOCKS.register("wrapped_gold_chains", () -> new RotatedPillarBlock(Block.Properties.from(Blocks.CHAIN)));
+    public static final RegistryObject<Item> WRAPPED_GOLD_CHAINS_ITEM = ITEMS.register("wrapped_gold_chains", () -> new BlockItem(WRAPPED_GOLD_CHAINS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
     public static final RegistryObject<Block> IRON_BAR_TRAPDOOR = BLOCKS.register("iron_bar_trapdoor", () -> new DustrialTrapDoor(Block.Properties.from(Blocks.IRON_BARS)));
     public static final RegistryObject<Item> IRON_BAR_TRAPDOOR_ITEM = ITEMS.register("iron_bar_trapdoor", () -> new BlockItem(IRON_BAR_TRAPDOOR.get(), new Item.Properties().group(ItemGroup.REDSTONE)));
 
@@ -289,10 +292,6 @@ public class DustrialBlocks {
 
     public static final RegistryObject<Block> BLACK_LIGHT = BLOCKS.register("black_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 7)));
     public static final RegistryObject<Item> BLACK_LIGHT_ITEM = ITEMS.register("black_light", () -> new BlockItem(BLACK_LIGHT.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
-
-
-    //public static final RegistryObject<Block> LARGE_CHAIN = BLOCKS.register("large_chain", () -> new LargeChain(Block.Properties.from(Blocks.field_235341_dI_)));
-    //public static final RegistryObject<Item> LARGE_CHAIN_ITEM = ITEMS.register("large_chain", () -> new BlockItem(LARGE_CHAIN.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
 
 
