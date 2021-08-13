@@ -1,0 +1,31 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "item": "dustrial_decor:sheet_metal_treading_vertical_slab",
+          "type": "forge:item_exists"
+        }
+      ],
+
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "#",
+          "#",
+          "#"
+        ],
+        "key": {
+          "#": {
+            "item": "dustrial_decor:sheet_metal_treading_slab"
+          }
+        },
+        "result": {
+          "item": "dustrial_decor:sheet_metal_treading_vertical_slab",
+          "count": 3
+        }
+      }
+    }
+  ]
+}

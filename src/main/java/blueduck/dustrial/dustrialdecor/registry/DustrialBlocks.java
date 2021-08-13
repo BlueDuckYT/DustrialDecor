@@ -53,6 +53,9 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> MINI_PADDED_SLAB = BLOCKS.register("mini_padded_slab", () -> new PaddedSlab(Block.Properties.from(PADDED_BLOCK.get())));
     public static final RegistryObject<Item> MINI_PADDED_SLAB_ITEM = ITEMS.register("mini_padded_slab", () -> new BlockItem(MINI_PADDED_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
+    public static final RegistryObject<Block> MINI_PADDED_VERTICAL_SLAB = conditionallyRegisterBlock("mini_padded_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.from(PADDED_BLOCK.get())), () -> isLoaded("quark"));
+    public static final RegistryObject<Item> MINI_PADDED_VERTICAL_SLAB_ITEM = conditionallyRegisterItem("mini_padded_vertical_slab", () -> new BlockItem(MINI_PADDED_VERTICAL_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)), () -> isLoaded("quark"));
+
     public static final RegistryObject<Block> MINI_PADDED_STAIRS = BLOCKS.register("mini_padded_stairs", () -> new PaddedStairs(Block.Properties.from(PADDED_BLOCK.get())));
     public static final RegistryObject<Item> MINI_PADDED_STAIRS_ITEM = ITEMS.register("mini_padded_stairs", () -> new BlockItem(MINI_PADDED_STAIRS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
@@ -105,6 +108,10 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> BOLTED_INDUSTRIAL_IRON_SLAB = BLOCKS.register("bolted_industrial_iron_slab", () -> new SlabBlock(Block.Properties.from(BOLTED_INDUSTRIAL_IRON_BLOCK.get()).sound(SoundType.NETHERITE)));
     public static final RegistryObject<Item> BOLTED_INDUSTRIAL_IRON_SLAB_ITEM = ITEMS.register("bolted_industrial_iron_slab", () -> new BlockItem(BOLTED_INDUSTRIAL_IRON_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
+    public static final RegistryObject<Block> BOLTED_INDUSTRIAL_IRON_VERTICAL_SLAB = conditionallyRegisterBlock("bolted_industrial_iron_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.from(BOLTED_INDUSTRIAL_IRON_BLOCK.get())), () -> isLoaded("quark"));
+    public static final RegistryObject<Item> BOLTED_INDUSTRIAL_IRON_VERTICAL_SLAB_ITEM = conditionallyRegisterItem("bolted_industrial_iron_vertical_slab", () -> new BlockItem(BOLTED_INDUSTRIAL_IRON_VERTICAL_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)), () -> isLoaded("quark"));
+
+
     public static final RegistryObject<Block> BOLTED_INDUSTRIAL_IRON_STAIRS = BLOCKS.register("bolted_industrial_iron_stairs", () -> new StairsBlock(() -> BOLTED_INDUSTRIAL_IRON_BLOCK.get().getDefaultState(), Block.Properties.from(BOLTED_INDUSTRIAL_IRON_BLOCK.get()).sound(SoundType.NETHERITE)));
     public static final RegistryObject<Item> BOLTED_INDUSTRIAL_IRON_STAIRS_ITEM = ITEMS.register("bolted_industrial_iron_stairs", () -> new BlockItem(BOLTED_INDUSTRIAL_IRON_STAIRS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
@@ -121,6 +128,10 @@ public class DustrialBlocks {
 
     public static final RegistryObject<Block> SHEET_METAL_PLATING_SLAB = BLOCKS.register("sheet_metal_plating_slab", () -> new SlabBlock(Block.Properties.from(SHEET_METAL_PLATING.get())));
     public static final RegistryObject<Item> SHEET_METAL_PLATING_SLAB_ITEM = ITEMS.register("sheet_metal_plating_slab", () -> new BlockItem(SHEET_METAL_PLATING_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> SHEET_METAL_PLATING_VERTICAL_SLAB = conditionallyRegisterBlock("sheet_metal_plating_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.from(SHEET_METAL_PLATING.get())), () -> isLoaded("quark"));
+    public static final RegistryObject<Item> SHEET_METAL_PLATING_VERTICAL_SLAB_ITEM = conditionallyRegisterItem("sheet_metal_plating_vertical_slab", () -> new BlockItem(SHEET_METAL_PLATING_VERTICAL_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)), () -> isLoaded("quark"));
+
 
     public static final RegistryObject<Block> SHEET_METAL_PLATING_STAIRS = BLOCKS.register("sheet_metal_plating_stairs", () -> new StairsBlock(() -> SHEET_METAL_PLATING.get().getDefaultState(), Block.Properties.from(SHEET_METAL_PLATING.get())));
     public static final RegistryObject<Item> SHEET_METAL_PLATING_STAIRS_ITEM = ITEMS.register("sheet_metal_plating_stairs", () -> new BlockItem(SHEET_METAL_PLATING_STAIRS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
@@ -140,6 +151,9 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> SHEET_METAL_TREADING_SLAB = BLOCKS.register("sheet_metal_treading_slab", () -> new SlabBlock(Block.Properties.from(SHEET_METAL_TREADING.get())));
     public static final RegistryObject<Item> SHEET_METAL_TREADING_SLAB_ITEM = ITEMS.register("sheet_metal_treading_slab", () -> new BlockItem(SHEET_METAL_TREADING_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
+    public static final RegistryObject<Block> SHEET_METAL_TREADING_VERTICAL_SLAB = conditionallyRegisterBlock("sheet_metal_treading_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.from(SHEET_METAL_TREADING.get())), () -> isLoaded("quark"));
+    public static final RegistryObject<Item> SHEET_METAL_TREADING_VERTICAL_SLAB_ITEM = conditionallyRegisterItem("sheet_metal_treading_vertical_slab", () -> new BlockItem(SHEET_METAL_TREADING_VERTICAL_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)), () -> isLoaded("quark"));
+
     public static final RegistryObject<Block> SHEET_METAL_TREADING_STAIRS = BLOCKS.register("sheet_metal_treading_stairs", () -> new StairsBlock(() -> SHEET_METAL_TREADING.get().getDefaultState(), Block.Properties.from(SHEET_METAL_TREADING.get())));
     public static final RegistryObject<Item> SHEET_METAL_TREADING_STAIRS_ITEM = ITEMS.register("sheet_metal_treading_stairs", () -> new BlockItem(SHEET_METAL_TREADING_STAIRS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
@@ -156,6 +170,10 @@ public class DustrialBlocks {
 
     public static final RegistryObject<Block> RUSTY_SHEET_METAL_PLATING_SLAB = BLOCKS.register("rusty_sheet_metal_plating_slab", () -> new SlabBlock(Block.Properties.from(RUSTY_SHEET_METAL_PLATING.get())));
     public static final RegistryObject<Item> RUSTY_SHEET_METAL_PLATING_SLAB_ITEM = ITEMS.register("rusty_sheet_metal_plating_slab", () -> new BlockItem(RUSTY_SHEET_METAL_PLATING_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> RUSTY_SHEET_METAL_PLATING_VERTICAL_SLAB = conditionallyRegisterBlock("rusty_sheet_metal_plating_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.from(RUSTY_SHEET_METAL_PLATING.get())), () -> isLoaded("quark"));
+    public static final RegistryObject<Item> RUSTY_SHEET_METAL_PLATING_VERTICAL_SLAB_ITEM = conditionallyRegisterItem("rusty_sheet_metal_plating_vertical_slab", () -> new BlockItem(RUSTY_SHEET_METAL_PLATING_VERTICAL_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)), () -> isLoaded("quark"));
+
 
     public static final RegistryObject<Block> RUSTY_SHEET_METAL_PLATING_STAIRS = BLOCKS.register("rusty_sheet_metal_plating_stairs", () -> new StairsBlock(() -> RUSTY_SHEET_METAL_PLATING.get().getDefaultState(), Block.Properties.from(RUSTY_SHEET_METAL_PLATING.get())));
     public static final RegistryObject<Item> RUSTY_SHEET_METAL_PLATING_STAIRS_ITEM = ITEMS.register("rusty_sheet_metal_plating_stairs", () -> new BlockItem(RUSTY_SHEET_METAL_PLATING_STAIRS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
@@ -174,6 +192,9 @@ public class DustrialBlocks {
 
     public static final RegistryObject<Block> RUSTY_SHEET_METAL_TREADING_SLAB = BLOCKS.register("rusty_sheet_metal_treading_slab", () -> new SlabBlock(Block.Properties.from(RUSTY_SHEET_METAL_TREADING.get())));
     public static final RegistryObject<Item> RUSTY_SHEET_METAL_TREADING_SLAB_ITEM = ITEMS.register("rusty_sheet_metal_treading_slab", () -> new BlockItem(RUSTY_SHEET_METAL_TREADING_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> RUSTY_SHEET_METAL_TREADING_VERTICAL_SLAB = conditionallyRegisterBlock("rusty_sheet_metal_treading_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.from(RUSTY_SHEET_METAL_TREADING.get())), () -> isLoaded("quark"));
+    public static final RegistryObject<Item> RUSTY_SHEET_METAL_TREADING_VERTICAL_SLAB_ITEM = conditionallyRegisterItem("rusty_sheet_metal_treading_vertical_slab", () -> new BlockItem(RUSTY_SHEET_METAL_TREADING_VERTICAL_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)), () -> isLoaded("quark"));
 
     public static final RegistryObject<Block> RUSTY_SHEET_METAL_TREADING_STAIRS = BLOCKS.register("rusty_sheet_metal_treading_stairs", () -> new StairsBlock(() -> RUSTY_SHEET_METAL_TREADING.get().getDefaultState(), Block.Properties.from(RUSTY_SHEET_METAL_TREADING.get())));
     public static final RegistryObject<Item> RUSTY_SHEET_METAL_TREADING_STAIRS_ITEM = ITEMS.register("rusty_sheet_metal_treading_stairs", () -> new BlockItem(RUSTY_SHEET_METAL_TREADING_STAIRS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
@@ -196,6 +217,10 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> CINDER_BRICKS_SLAB = BLOCKS.register("cinder_brick_slab", () -> new SlabBlock(Block.Properties.from(CINDER_BRICKS.get())));
     public static final RegistryObject<Item> CINDER_BRICKS_SLAB_ITEM = ITEMS.register("cinder_brick_slab", () -> new BlockItem(CINDER_BRICKS_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
+    public static final RegistryObject<Block> CINDER_BRICKS_VERTICAL_SLAB = conditionallyRegisterBlock("cinder_brick_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.from(CINDER_BRICKS.get())), () -> isLoaded("quark"));
+    public static final RegistryObject<Item> CINDER_BRICKS_VERTICAL_SLAB_ITEM = conditionallyRegisterItem("cinder_brick_vertical_slab", () -> new BlockItem(CINDER_BRICKS_VERTICAL_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)), () -> isLoaded("quark"));
+
+
     public static final RegistryObject<Block> CINDER_BRICKS_STAIRS = BLOCKS.register("cinder_brick_stairs", () -> new StairsBlock(() -> CINDER_BRICKS.get().getDefaultState(), Block.Properties.from(CINDER_BRICKS.get())));
     public static final RegistryObject<Item> CINDER_BRICKS_STAIRS_ITEM = ITEMS.register("cinder_brick_stairs", () -> new BlockItem(CINDER_BRICKS_STAIRS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
@@ -209,6 +234,10 @@ public class DustrialBlocks {
 
     public static final RegistryObject<Block> SMOOTH_CARDBOARD_SLAB = BLOCKS.register("smooth_cardboard_slab", () -> new CardboardSlab(Block.Properties.from(SMOOTH_CARDBOARD.get())));
     public static final RegistryObject<Item> SMOOTH_CARDBOARD_SLAB_ITEM = ITEMS.register("smooth_cardboard_slab", () -> new BlockItem(SMOOTH_CARDBOARD_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> SMOOTH_CARDBOARD_VERTICAL_SLAB = conditionallyRegisterBlock("smooth_cardboard_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.from(SMOOTH_CARDBOARD.get())), () -> isLoaded("quark"));
+    public static final RegistryObject<Item> SMOOTH_CARDBOARD_VERTICAL_SLAB_ITEM = conditionallyRegisterItem("smooth_cardboard_vertical_slab", () -> new BlockItem(SMOOTH_CARDBOARD_VERTICAL_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)), () -> isLoaded("quark"));
+
 
     public static final RegistryObject<Block> SMOOTH_CARDBOARD_STAIRS = BLOCKS.register("smooth_cardboard_stairs", () -> new CardboardStairs(Block.Properties.from(SMOOTH_CARDBOARD.get())));
     public static final RegistryObject<Item> SMOOTH_CARDBOARD_STAIRS_ITEM = ITEMS.register("smooth_cardboard_stairs", () -> new BlockItem(SMOOTH_CARDBOARD_STAIRS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
