@@ -12,8 +12,6 @@
       "recipe": {
         "type": "minecraft:crafting_shaped",
         "pattern": [
-          "#",
-          "#",
           "#"
         ],
         "key": {
@@ -22,8 +20,7 @@
           }
         },
         "result": {
-          "item": "dustrial_decor:rusty_sheet_metal_plating_slab",
-          "count": 3
+          "item": "dustrial_decor:rusty_sheet_metal_plating_slab"
         }
       }
     }

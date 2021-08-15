@@ -292,6 +292,10 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> LARGE_ENDER_LANTERN = conditionallyRegisterBlock("large_ender_lantern", () -> new Block(Block.Properties.from(Blocks.LANTERN).setLightLevel(blockState -> 15)), () -> isLoaded("endergetic"));
     public static final RegistryObject<Item> LARGE_ENDER_LANTERN_ITEM = conditionallyRegisterItem("large_ender_lantern", () -> new BlockItem(LARGE_ENDER_LANTERN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)), () -> isLoaded("endergetic"));
 
+//    public static final RegistryObject<Block> LARGE_GLOW_LANTERN = conditionallyRegisterBlock("large_glow_lantern", () -> new Block(Block.Properties.from(Blocks.LANTERN).setLightLevel(blockState -> 15)), () -> isLoaded("infernalexp"));
+//    public static final RegistryObject<Item> LARGE_GLOW_LANTERN_ITEM = conditionallyRegisterItem("large_glow_lantern", () -> new BlockItem(LARGE_GLOW_LANTERN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)), () -> isLoaded("infernalexp"));
+
+
     public static final RegistryObject<Block> RED_NEON_LIGHT = BLOCKS.register("red_neon_light", () -> new Block(Block.Properties.from(Blocks.GLOWSTONE).setLightLevel(blockState -> 15)));
     public static final RegistryObject<Item> RED_NEON_LIGHT_ITEM = ITEMS.register("red_neon_light", () -> new BlockItem(RED_NEON_LIGHT.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 

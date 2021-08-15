@@ -4,7 +4,7 @@
     {
       "conditions": [
         {
-          "item": "dustrial_decor:mini_padded_vertical_slab",
+          "item": "infernalexp:glow_torch",
           "type": "forge:item_exists"
         }
       ],
@@ -12,15 +12,20 @@
       "recipe": {
         "type": "minecraft:crafting_shaped",
         "pattern": [
-          "#"
+          "###",
+          "$$$",
+          "###"
         ],
         "key": {
           "#": {
-            "item": "dustrial_decor:mini_padded_vertical_slab"
+            "item": "minecraft:iron_ingot"
+          },
+          "$": {
+            "item": "infernalexp:glow_torch"
           }
         },
         "result": {
-          "item": "dustrial_decor:mini_padded_slab"
+          "item": "dustrial_decor:large_glow_lantern"
         }
       }
     }

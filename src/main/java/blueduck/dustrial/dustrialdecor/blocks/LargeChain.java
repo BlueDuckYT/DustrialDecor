@@ -26,8 +26,9 @@ public class LargeChain extends ChainBlock {
 
     @Override
     public boolean isLadder(BlockState state, net.minecraft.world.IWorldReader world, BlockPos pos, net.minecraft.entity.LivingEntity entity) {
-        return false;
+        return state.get(AXIS).equals(Direction.Axis.Y);
     }
+
 
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
         switch((Direction.Axis)state.get(AXIS)) {
