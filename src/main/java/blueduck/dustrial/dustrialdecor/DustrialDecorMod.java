@@ -169,7 +169,7 @@ public class DustrialDecorMod
             RenderTypeLookup.setRenderLayer(DustrialBlocks.ANCHOR.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.HOOK.get(), RenderType.getCutoutMipped());
 
-            if (isLoaded("environmental")) {
+            if (DustrialBlocks.LARGE_ICE_CHAIN != null) {
 
                 RenderTypeLookup.setRenderLayer(DustrialBlocks.LARGE_ICE_CHAIN.get(), RenderType.getCutoutMipped());
             }
