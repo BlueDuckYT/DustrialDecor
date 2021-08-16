@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "dustrial_decor:block/large_lantern_top",
+    "side": "dustrial_decor:block/large_cursed_lantern"
+  }
+}

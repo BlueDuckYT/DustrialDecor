@@ -1,0 +1,33 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "item": "endergetic:cursed_torch",
+          "type": "forge:item_exists"
+        }
+      ],
+
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "$$$",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:iron_ingot"
+          },
+          "$": {
+            "item": "caverns_and_chasms:cursed_torch"
+          }
+        },
+        "result": {
+          "item": "dustrial_decor:large_cursed_lantern"
+        }
+      }
+    }
+  ]
+}
