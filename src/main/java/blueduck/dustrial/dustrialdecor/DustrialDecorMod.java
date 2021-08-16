@@ -28,6 +28,7 @@ import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -168,9 +169,19 @@ public class DustrialDecorMod
             RenderTypeLookup.setRenderLayer(DustrialBlocks.ANCHOR.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.HOOK.get(), RenderType.getCutoutMipped());
 
+            if (isLoaded("environmental")) {
+
+                RenderTypeLookup.setRenderLayer(DustrialBlocks.LARGE_ICE_CHAIN.get(), RenderType.getCutoutMipped());
+            }
+
 
         }
     }
+
+    public static boolean isLoaded(String modid) {
+        return ModList.get().isLoaded(modid);
+    }
+
     @Mod.EventBusSubscriber(modid = "dustrial_decor")
     public static class LootEvents {
         @SubscribeEvent

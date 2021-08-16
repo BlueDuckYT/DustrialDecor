@@ -53,7 +53,7 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> MINI_PADDED_SLAB = BLOCKS.register("mini_padded_slab", () -> new PaddedSlab(Block.Properties.from(PADDED_BLOCK.get())));
     public static final RegistryObject<Item> MINI_PADDED_SLAB_ITEM = ITEMS.register("mini_padded_slab", () -> new BlockItem(MINI_PADDED_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
-    public static final RegistryObject<Block> MINI_PADDED_VERTICAL_SLAB = conditionallyRegisterBlock("mini_padded_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.from(PADDED_BLOCK.get())), () -> isLoaded("quark"));
+    public static final RegistryObject<Block> MINI_PADDED_VERTICAL_SLAB = conditionallyRegisterBlock("mini_padded_vertical_slab", () -> new PaddedVerticalSlab(Block.Properties.from(PADDED_BLOCK.get())), () -> isLoaded("quark"));
     public static final RegistryObject<Item> MINI_PADDED_VERTICAL_SLAB_ITEM = conditionallyRegisterItem("mini_padded_vertical_slab", () -> new BlockItem(MINI_PADDED_VERTICAL_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)), () -> isLoaded("quark"));
 
     public static final RegistryObject<Block> MINI_PADDED_STAIRS = BLOCKS.register("mini_padded_stairs", () -> new PaddedStairs(Block.Properties.from(PADDED_BLOCK.get())));
@@ -82,6 +82,10 @@ public class DustrialBlocks {
 
     public static final RegistryObject<Block> LARGE_GOLD_CHAIN = BLOCKS.register("large_gold_chain", () -> new LargeChain(Block.Properties.from(Blocks.CHAIN)));
     public static final RegistryObject<Item> LARGE_GOLD_CHAIN_ITEM = ITEMS.register("large_gold_chain", () -> new BlockItem(LARGE_GOLD_CHAIN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+
+    public static final RegistryObject<Block> LARGE_ICE_CHAIN = conditionallyRegisterBlock("large_ice_chain", () -> new LargeChain(Block.Properties.from(Blocks.CHAIN)), () -> isLoaded("environmental"));
+    public static final RegistryObject<Item> LARGE_ICE_CHAIN_ITEM = conditionallyRegisterItem("large_ice_chain", () -> new BlockItem(LARGE_ICE_CHAIN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)), () -> isLoaded("environmental"));
+
 
     public static final RegistryObject<Block> ANCHOR = BLOCKS.register("anchor", () -> new DoubleBlock(Block.Properties.from(Blocks.CHAIN)));
     public static final RegistryObject<Item> ANCHOR_ITEM = ITEMS.register("anchor", () -> new BlockItem(ANCHOR.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
@@ -277,6 +281,9 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> WRAPPED_GOLD_CHAINS = BLOCKS.register("wrapped_gold_chains", () -> new RotatedPillarBlock(Block.Properties.from(Blocks.CHAIN)));
     public static final RegistryObject<Item> WRAPPED_GOLD_CHAINS_ITEM = ITEMS.register("wrapped_gold_chains", () -> new BlockItem(WRAPPED_GOLD_CHAINS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
+    public static final RegistryObject<Block> WRAPPED_ICE_CHAINS = conditionallyRegisterBlock("wrapped_ice_chains", () -> new RotatedPillarBlock(Block.Properties.from(Blocks.CHAIN)), () -> isLoaded("environmental"));
+    public static final RegistryObject<Item> WRAPPED_ICE_CHAINS_ITEM = conditionallyRegisterItem("wrapped_ice_chains", () -> new BlockItem(WRAPPED_ICE_CHAINS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)), () -> isLoaded("environmental"));
+
     public static final RegistryObject<Block> IRON_BAR_TRAPDOOR = BLOCKS.register("iron_bar_trapdoor", () -> new DustrialTrapDoor(Block.Properties.from(Blocks.IRON_BARS)));
     public static final RegistryObject<Item> IRON_BAR_TRAPDOOR_ITEM = ITEMS.register("iron_bar_trapdoor", () -> new BlockItem(IRON_BAR_TRAPDOOR.get(), new Item.Properties().group(ItemGroup.REDSTONE)));
 
@@ -372,7 +379,7 @@ public class DustrialBlocks {
     }
 
     public static boolean isLoaded(String modid) {
-        return ModList.get().isLoaded(modid) || true;
+        return ModList.get().isLoaded(modid);
     }
 
 }

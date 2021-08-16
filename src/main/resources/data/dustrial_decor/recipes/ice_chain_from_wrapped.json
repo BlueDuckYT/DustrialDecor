@@ -1,0 +1,29 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "item": "environmental:ice_chain",
+          "type": "forge:item_exists"
+        }
+      ],
+
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "#"
+        ],
+        "key": {
+          "#": {
+            "item": "dustrial_decor:wrapped_ice_chains"
+          }
+        },
+        "result": {
+          "item": "dustrial_decor:ice_chain",
+          "count": 9
+        }
+      }
+    }
+  ]
+}

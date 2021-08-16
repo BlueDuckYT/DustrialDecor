@@ -79,8 +79,6 @@
   "block.dustrial_decor.hook": "Hook",
   "block.dustrial_decor.large_lantern": "Large Lantern",
   "block.dustrial_decor.large_soul_lantern": "Large Soul Lantern",
-  "block.dustrial_decor.large_ender_lantern": "Large Ender Lantern",
-  "block.dustrial_decor.large_glow_lantern": "Large Glowlight Lantern",
   "block.dustrial_decor.red_neon_light": "Red Neon Light",
   "block.dustrial_decor.orange_neon_light": "Orange Neon Light",
   "block.dustrial_decor.yellow_neon_light": "Yellow Neon Light",
@@ -91,6 +89,11 @@
   "block.dustrial_decor.purple_neon_light": "Purple Neon Light",
   "block.dustrial_decor.rainbow_neon_light": "Rainbow Neon Light",
   "block.dustrial_decor.black_light": "Black Light",
+
+  "block.dustrial_decor.large_ender_lantern": "Large Ender Lantern",
+  "block.dustrial_decor.large_glow_lantern": "Large Glowlight Lantern",
+  "block.dustrial_decor.large_ice_chain": "Large Ice Chain",
+  "block.dustrial_decor.wrapped_ice_chains": "Wrapped Ice Chains",
 
   "item.dustrial_decor.cardboard_helmet": "Cardboard Helmet",
   "item.dustrial_decor.cardboard_chestplate": "Cardboard Chestplate",

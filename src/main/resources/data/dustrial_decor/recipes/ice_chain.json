@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "item": "environmental:ice_chain",
+          "type": "forge:item_exists"
+        }
+      ],
+
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "#",
+          "$",
+          "#"
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:iron_nugget"
+          },
+          "$": {
+            "item": "minecraft:packed_ice"
+          }
+        },
+        "result": {
+          "item": "environmental:ice_chain",
+          "count": 8
+        }
+      }
+    }
+  ]
+}

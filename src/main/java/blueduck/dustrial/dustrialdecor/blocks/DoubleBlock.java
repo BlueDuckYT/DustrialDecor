@@ -47,7 +47,7 @@ public class DoubleBlock extends Block implements IWaterLoggable {
     public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
         BlockPos blockpos = pos.up();
         BlockState blockstate = worldIn.getBlockState(blockpos);
-        return state.get(HALF) == DoubleBlockHalf.UPPER ? blockstate.isSolidSide(worldIn, blockpos, Direction.DOWN) || blockstate.getBlock() instanceof LargeChain : blockstate.isIn(this);
+        return state.get(HALF) == DoubleBlockHalf.UPPER ? (blockstate.isSolidSide(worldIn, blockpos, Direction.DOWN) || blockstate.getBlock() instanceof LargeChain) && worldIn.getBlockState(pos.down()).equals(Blocks.AIR.getDefaultState()) : blockstate.isIn(this) && state.equals(Blocks.AIR.getDefaultState());
     }
 
     public void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
