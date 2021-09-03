@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "dustrial_decor:block/redstone_lantern"
+    },
+    "hanging=true": {
+      "model": "dustrial_decor:block/redstone_lantern_hanging"
+    }
+  }
+}

@@ -155,6 +155,7 @@ public class DustrialDecorMod
             RenderTypeLookup.setRenderLayer(DustrialBlocks.BARBED_CHAIN_LINK_FENCE.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.BARBED_IRON_BARS.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.PADDED_TRAPDOOR.get(), RenderType.getCutoutMipped());
+            RenderTypeLookup.setRenderLayer(DustrialBlocks.INDUSTRIAL_IRON_DOOR.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.CHAIN_TRAPDOOR.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.PADDED_DOOR.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.CHAIN_DOOR.get(), RenderType.getCutoutMipped());
@@ -168,6 +169,7 @@ public class DustrialDecorMod
             RenderTypeLookup.setRenderLayer(DustrialBlocks.LARGE_GOLD_CHAIN.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.ANCHOR.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.HOOK.get(), RenderType.getCutoutMipped());
+            RenderTypeLookup.setRenderLayer(DustrialBlocks.REDSTONE_LANTERN.get(), RenderType.getCutoutMipped());
 
             if (DustrialBlocks.LARGE_ICE_CHAIN != null) {
 

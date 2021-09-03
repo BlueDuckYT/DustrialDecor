@@ -10,7 +10,7 @@
       "tag": "dustrial_decor:padded_blocks"
     },
     "$": {
-      "tag": "dustrial_decor:industrial_iron_blocks"
+      "item": "dustrial_decor:industrial_iron_billet"
     }
   },
   "result": {

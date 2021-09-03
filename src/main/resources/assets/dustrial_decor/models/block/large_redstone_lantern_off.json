@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "dustrial_decor:block/large_redstone_lantern_top_off",
+    "north": "dustrial_decor:block/large_redstone_lantern_off",
+    "south": "dustrial_decor:block/large_redstone_lantern_off",
+    "east": "dustrial_decor:block/large_redstone_lantern_off",
+    "west": "dustrial_decor:block/large_redstone_lantern_off",
+    "up": "dustrial_decor:block/large_redstone_lantern_top_off",
+    "down": "dustrial_decor:block/large_lantern_bottom"
+  }
+}

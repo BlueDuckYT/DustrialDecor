@@ -7,10 +7,11 @@
   ],
   "key": {
     "#": {
-      "tag": "dustrial_decor:industrial_iron_blocks"
+      "item": "dustrial_decor:industrial_iron_billet"
     }
   },
   "result": {
-    "item": "dustrial_decor:industrial_iron_door"
+    "item": "dustrial_decor:industrial_iron_door",
+    "count": 3
   }
 }

@@ -13,6 +13,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.registry.Registry;
@@ -32,6 +33,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 
 public class DustrialBlocks {
@@ -99,6 +101,8 @@ public class DustrialBlocks {
 
     public static final RegistryObject<Block> CHAIN_DOOR = BLOCKS.register("chain_door", () -> new DustrialDoor(Block.Properties.from(CHAIN_TRAPDOOR.get())));
     public static final RegistryObject<Item> CHAIN_DOOR_ITEM = ITEMS.register("chain_door", () -> new BlockItem(CHAIN_DOOR.get(), new Item.Properties().group(ItemGroup.REDSTONE)));
+
+    public static final RegistryObject<Item> INDUSTRIAL_IRON_BILLET = ITEMS.register("industrial_iron_billet", () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
 
     public static final RegistryObject<Block> INDUSTRIAL_IRON_BLOCK = BLOCKS.register("industrial_iron_block", () -> new Block(Block.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE)));
     public static final RegistryObject<Item> INDUSTRIAL_IRON_BLOCK_ITEM = ITEMS.register("industrial_iron_block", () -> new BlockItem(INDUSTRIAL_IRON_BLOCK.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
@@ -290,17 +294,25 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> IRON_BAR_DOOR = BLOCKS.register("iron_bar_door", () -> new DustrialDoor(Block.Properties.from(IRON_BAR_TRAPDOOR.get())));
     public static final RegistryObject<Item> IRON_BAR_DOOR_ITEM = ITEMS.register("iron_bar_door", () -> new BlockItem(IRON_BAR_DOOR.get(), new Item.Properties().group(ItemGroup.REDSTONE)));
 
+    public static final RegistryObject<Block> REDSTONE_LANTERN = BLOCKS.register("redstone_lantern", () -> new LanternBlock(Block.Properties.from(Blocks.LANTERN).setLightLevel(blockState -> 7)));
+    public static final RegistryObject<Item> REDSTONE_LANTERN_ITEM = ITEMS.register("redstone_lantern", () -> new BlockItem(REDSTONE_LANTERN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+
+
     public static final RegistryObject<Block> LARGE_LANTERN = BLOCKS.register("large_lantern", () -> new Block(Block.Properties.from(Blocks.LANTERN).setLightLevel(blockState -> 15)));
     public static final RegistryObject<Item> LARGE_LANTERN_ITEM = ITEMS.register("large_lantern", () -> new BlockItem(LARGE_LANTERN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 
     public static final RegistryObject<Block> LARGE_SOUL_LANTERN = BLOCKS.register("large_soul_lantern", () -> new Block(Block.Properties.from(Blocks.LANTERN).setLightLevel(blockState -> 15)));
     public static final RegistryObject<Item> LARGE_SOUL_LANTERN_ITEM = ITEMS.register("large_soul_lantern", () -> new BlockItem(LARGE_SOUL_LANTERN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 
+    public static final RegistryObject<Block> LARGE_REDSTONE_LANTERN = BLOCKS.register("large_redstone_lantern", () -> new RedstoneLampBlock(Block.Properties.from(Blocks.LANTERN).setLightLevel(getLightValueLit(12))));
+    public static final RegistryObject<Item> LARGE_REDSTONE_LANTERN_ITEM = ITEMS.register("large_redstone_lantern", () -> new BlockItem(LARGE_REDSTONE_LANTERN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+
+
     public static final RegistryObject<Block> LARGE_ENDER_LANTERN = conditionallyRegisterBlock("large_ender_lantern", () -> new Block(Block.Properties.from(Blocks.LANTERN).setLightLevel(blockState -> 15)), () -> isLoaded("endergetic"));
     public static final RegistryObject<Item> LARGE_ENDER_LANTERN_ITEM = conditionallyRegisterItem("large_ender_lantern", () -> new BlockItem(LARGE_ENDER_LANTERN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)), () -> isLoaded("endergetic"));
 
     public static final RegistryObject<Block> LARGE_CURSED_LANTERN = conditionallyRegisterBlock("large_cursed_lantern", () -> new Block(Block.Properties.from(Blocks.LANTERN).setLightLevel(blockState -> 15)), () -> isLoaded("caverns_and_chasms"));
-    public static final RegistryObject<Item> LARGE_CURSED_LANTERN_ITEM = conditionallyRegisterItem("large_cursed_lantern", () -> new BlockItem(LARGE_CURSED_LANTERN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)), () -> isLoaded("infernalexp"));
+    public static final RegistryObject<Item> LARGE_CURSED_LANTERN_ITEM = conditionallyRegisterItem("large_cursed_lantern", () -> new BlockItem(LARGE_CURSED_LANTERN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)), () -> isLoaded("caverns_and_chasms"));
 
     public static final RegistryObject<Block> LARGE_GLOW_LANTERN = conditionallyRegisterBlock("large_glow_lantern", () -> new Block(Block.Properties.from(Blocks.LANTERN).setLightLevel(blockState -> 15)), () -> isLoaded("infernalexp"));
     public static final RegistryObject<Item> LARGE_GLOW_LANTERN_ITEM = conditionallyRegisterItem("large_glow_lantern", () -> new BlockItem(LARGE_GLOW_LANTERN.get(), new Item.Properties().group(ItemGroup.DECORATIONS)), () -> isLoaded("infernalexp"));
@@ -379,6 +391,12 @@ public class DustrialBlocks {
         if (condition.get())
             return BLOCKS.register(registryName, block);
         return null;
+    }
+
+    private static ToIntFunction<BlockState> getLightValueLit(int lightValue) {
+        return (state) -> {
+            return state.get(BlockStateProperties.LIT) ? lightValue : 0;
+        };
     }
 
     public static boolean isLoaded(String modid) {

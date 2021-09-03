@@ -1,7 +1,12 @@
 {
-  "parent": "block/cube_column",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "end": "dustrial_decor:block/large_lantern_top",
-    "side": "dustrial_decor:block/large_lantern"
+    "particle": "dustrial_decor:block/large_lantern_top",
+    "north": "dustrial_decor:block/large_lantern",
+    "south": "dustrial_decor:block/large_lantern",
+    "east": "dustrial_decor:block/large_lantern",
+    "west": "dustrial_decor:block/large_lantern",
+    "up": "dustrial_decor:block/large_lantern_top",
+    "down": "dustrial_decor:block/large_lantern_bottom"
   }
 }

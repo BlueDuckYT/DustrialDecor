@@ -2,19 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "###",
-    "#$#",
+    "# #",
     "###"
   ],
   "key": {
     "#": {
-      "item": "minecraft:iron_ingot"
-    },
-    "$": {
-      "item": "minecraft:coal"
+      "item": "dustrial_decor:industrial_iron_billet"
     }
   },
   "result": {
     "item": "dustrial_decor:industrial_iron_block",
-    "count": 24
+    "count": 12
   }
 }

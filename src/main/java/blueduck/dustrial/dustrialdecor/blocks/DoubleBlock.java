@@ -6,8 +6,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.IWaterLoggable;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.fluid.WaterFluid;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.BooleanProperty;
@@ -23,6 +25,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraftforge.common.Tags;
 
 import javax.annotation.Nullable;
 
@@ -47,7 +50,11 @@ public class DoubleBlock extends Block implements IWaterLoggable {
     public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
         BlockPos blockpos = pos.up();
         BlockState blockstate = worldIn.getBlockState(blockpos);
-        return state.get(HALF) == DoubleBlockHalf.UPPER ? (blockstate.isSolidSide(worldIn, blockpos, Direction.DOWN) || blockstate.getBlock() instanceof LargeChain) && worldIn.getBlockState(pos.down()).equals(Blocks.AIR.getDefaultState()) : blockstate.isIn(this) && state.equals(Blocks.AIR.getDefaultState());
+        return state.get(HALF) == DoubleBlockHalf.UPPER ? (blockstate.isSolidSide(worldIn, blockpos, Direction.DOWN) || (blockstate.getBlock() instanceof LargeChain) && state.get(LargeChain.AXIS).isVertical()) && isReplaceable(worldIn.getBlockState(pos.down())) : blockstate.isIn(this) && isReplaceable(state);
+    }
+
+    public boolean isReplaceable(BlockState state) {
+        return state.equals(Blocks.AIR.getDefaultState()) || state.equals(Fluids.WATER.getDefaultState()) || (state.getMaterial().isReplaceable() && !state.isSolid());
     }
 
     public void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {

@@ -1,4 +1,5 @@
 {
+  "item.dustrial_decor.industrial_iron_billet": "Industrial Iron Billet",
   "block.dustrial_decor.industrial_iron_block": "Industrial Iron Block",
   "block.dustrial_decor.industrial_iron_pillar": "Industrial Iron Pillar",
   "block.dustrial_decor.bolted_industrial_iron_block": "Bolted Industrial Iron Block",
@@ -77,8 +78,10 @@
   "block.dustrial_decor.large_gold_chain": "Large Gold Chain",
   "block.dustrial_decor.anchor": "Anchor",
   "block.dustrial_decor.hook": "Hook",
+  "block.dustrial_decor.redstone_lantern": "Redstone Lantern",
   "block.dustrial_decor.large_lantern": "Large Lantern",
   "block.dustrial_decor.large_soul_lantern": "Large Soul Lantern",
+  "block.dustrial_decor.large_redstone_lantern": "Large Redstone Lantern",
   "block.dustrial_decor.red_neon_light": "Red Neon Light",
   "block.dustrial_decor.orange_neon_light": "Orange Neon Light",
   "block.dustrial_decor.yellow_neon_light": "Yellow Neon Light",
