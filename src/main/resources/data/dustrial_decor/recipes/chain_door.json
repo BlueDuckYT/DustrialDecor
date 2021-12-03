@@ -14,6 +14,7 @@
     }
   },
   "result": {
-    "item": "dustrial_decor:chain_door"
+    "item": "dustrial_decor:chain_door",
+    "count": 3
   }
 }

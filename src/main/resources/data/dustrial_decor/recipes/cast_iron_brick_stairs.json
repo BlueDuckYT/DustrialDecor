@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "dustrial_decor:cast_iron_bricks"
+    }
+  },
+  "result": {
+    "item": "dustrial_decor:cast_iron_brick_stairs",
+    "count": 4
+  }
+}

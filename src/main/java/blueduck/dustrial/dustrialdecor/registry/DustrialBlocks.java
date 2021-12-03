@@ -107,8 +107,8 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> INDUSTRIAL_IRON_BLOCK = BLOCKS.register("industrial_iron_block", () -> new Block(Block.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE)));
     public static final RegistryObject<Item> INDUSTRIAL_IRON_BLOCK_ITEM = ITEMS.register("industrial_iron_block", () -> new BlockItem(INDUSTRIAL_IRON_BLOCK.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
-    public static final RegistryObject<Block> INDUSTRIAL_IRON_PILLAR_BLOCK = BLOCKS.register("industrial_iron_pillar", () -> new RotatedPillarBlock(Block.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE)));
-    public static final RegistryObject<Item> INDUSTRIAL_IRON_PILLAR_BLOCK_ITEM = ITEMS.register("industrial_iron_pillar", () -> new BlockItem(INDUSTRIAL_IRON_PILLAR_BLOCK.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+    public static final RegistryObject<Block> INDUSTRIAL_IRON_PILLAR = BLOCKS.register("industrial_iron_pillar", () -> new RotatedPillarBlock(Block.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE)));
+    public static final RegistryObject<Item> INDUSTRIAL_IRON_PILLAR_ITEM = ITEMS.register("industrial_iron_pillar", () -> new BlockItem(INDUSTRIAL_IRON_PILLAR.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
     public static final RegistryObject<Block> BOLTED_INDUSTRIAL_IRON_BLOCK = BLOCKS.register("bolted_industrial_iron_block", () -> new Block(Block.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE)));
     public static final RegistryObject<Item> BOLTED_INDUSTRIAL_IRON_BLOCK_ITEM = ITEMS.register("bolted_industrial_iron_block", () -> new BlockItem(BOLTED_INDUSTRIAL_IRON_BLOCK.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
@@ -128,6 +128,38 @@ public class DustrialBlocks {
 
     public static final RegistryObject<Block> INDUSTRIAL_IRON_DOOR = BLOCKS.register("industrial_iron_door", () -> new DustrialDoor(Block.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE)));
     public static final RegistryObject<Item> INDUSTRIAL_IRON_DOOR_ITEM = ITEMS.register("industrial_iron_door", () -> new BlockItem(INDUSTRIAL_IRON_DOOR.get(), new Item.Properties().group(ItemGroup.REDSTONE)));
+
+    public static final RegistryObject<Item> CAST_IRON_BILLET = ITEMS.register("cast_iron_billet", () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+
+    public static final RegistryObject<Block> CAST_IRON_BLOCK = BLOCKS.register("cast_iron_block", () -> new Block(Block.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE)));
+    public static final RegistryObject<Item> CAST_IRON_BLOCK_ITEM = ITEMS.register("cast_iron_block", () -> new BlockItem(CAST_IRON_BLOCK.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> CAST_IRON_PILLAR = BLOCKS.register("cast_iron_pillar", () -> new RotatedPillarBlock(Block.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE)));
+    public static final RegistryObject<Item> CAST_IRON_PILLAR_ITEM = ITEMS.register("cast_iron_pillar", () -> new BlockItem(CAST_IRON_PILLAR.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> CAST_IRON_BRICKS = BLOCKS.register("cast_iron_bricks", () -> new Block(Block.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE)));
+    public static final RegistryObject<Item> CAST_IRON_BRICKS_ITEM = ITEMS.register("cast_iron_bricks", () -> new BlockItem(CAST_IRON_BRICKS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> CAST_IRON_BRICKS_SLAB = BLOCKS.register("cast_iron_brick_slab", () -> new SlabBlock(Block.Properties.from(CAST_IRON_BRICKS.get()).sound(SoundType.NETHERITE)));
+    public static final RegistryObject<Item> CAST_IRON_BRICKS_SLAB_ITEM = ITEMS.register("cast_iron_brick_slab", () -> new BlockItem(CAST_IRON_BRICKS_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> CAST_IRON_BRICKS_VERTICAL_SLAB = conditionallyRegisterBlock("cast_iron_brick_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.from(CAST_IRON_BRICKS.get())), () -> isLoaded("quark"));
+    public static final RegistryObject<Item> CAST_IRON_BRICKS_VERTICAL_SLAB_ITEM = conditionallyRegisterItem("cast_iron_brick_vertical_slab", () -> new BlockItem(CAST_IRON_BRICKS_VERTICAL_SLAB.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)), () -> isLoaded("quark"));
+
+
+    public static final RegistryObject<Block> CAST_IRON_BRICKS_STAIRS = BLOCKS.register("cast_iron_brick_stairs", () -> new StairsBlock(() -> CAST_IRON_BRICKS.get().getDefaultState(), Block.Properties.from(CAST_IRON_BRICKS.get()).sound(SoundType.NETHERITE)));
+    public static final RegistryObject<Item> CAST_IRON_BRICKS_STAIRS_ITEM = ITEMS.register("cast_iron_brick_stairs", () -> new BlockItem(CAST_IRON_BRICKS_STAIRS.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+
+    public static final RegistryObject<Block> ENGRAVED_CAST_IRON_BLOCK = BLOCKS.register("engraved_cast_iron_block", () -> new Block(Block.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE)));
+    public static final RegistryObject<Item> ENGRAVED_CAST_IRON_BLOCK_ITEM = ITEMS.register("engraved_cast_iron_block", () -> new BlockItem(ENGRAVED_CAST_IRON_BLOCK.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> CAST_IRON_BALUSTRADE = BLOCKS.register("cast_iron_balustrade", () -> new PaneBlock(Block.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE)));
+    public static final RegistryObject<Item> CAST_IRON_BALUSTRADE_ITEM = ITEMS.register("cast_iron_balustrade", () -> new BlockItem(CAST_IRON_BALUSTRADE.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
+//    public static final RegistryObject<Block> CAST_IRON_FACADE = BLOCKS.register("cast_iron_facade", () -> new PaneBlock(Block.Properties.from(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE)));
+//    public static final RegistryObject<Item> CAST_IRON_FACADE_ITEM = ITEMS.register("cast_iron_facade", () -> new BlockItem(CAST_IRON_FACADE.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+
 
     public static final RegistryObject<Item> SHEET_METAL = ITEMS.register("sheet_metal", () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
 
@@ -216,7 +248,7 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> CINDER_BLOCK = BLOCKS.register("cinder_block", () -> new CinderBlock(Block.Properties.from(Blocks.STONE)));
     public static final RegistryObject<Item> CINDER_BLOCK_ITEM = ITEMS.register("cinder_block", () -> new BlockItem(CINDER_BLOCK.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
-    public static final RegistryObject<Block> POLISHED_CINDER_BLOCK = BLOCKS.register("polished_cinder_block", () -> new CinderBlock(Block.Properties.from(Blocks.STONE)));
+    public static final RegistryObject<Block> POLISHED_CINDER_BLOCK = BLOCKS.register("polished_cinder_block", () -> new RotatedPillarBlock(Block.Properties.from(Blocks.STONE)));
     public static final RegistryObject<Item> POLISHED_CINDER_BLOCK_ITEM = ITEMS.register("polished_cinder_block", () -> new BlockItem(POLISHED_CINDER_BLOCK.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
     public static final RegistryObject<Block> CINDER_BRICKS = BLOCKS.register("cinder_bricks", () -> new Block(Block.Properties.from(Blocks.STONE)));
@@ -237,7 +269,7 @@ public class DustrialBlocks {
     public static final RegistryObject<Block> CARDBOARD_BOX = BLOCKS.register("cardboard_box", () -> new DirectionalBlock(Block.Properties.create(Material.MISCELLANEOUS, MaterialColor.WOOD).hardnessAndResistance(1.0F, 0.3F).sound(CARDBOARD_SOUND).harvestTool(ToolType.AXE)));
     public static final RegistryObject<Item> CARDBOARD_BOX_ITEM = ITEMS.register("cardboard_box", () -> new BlockItem(CARDBOARD_BOX.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
-    public static final RegistryObject<Block> SMOOTH_CARDBOARD = BLOCKS.register("smooth_cardboard", () -> new CardboardBlock(Block.Properties.create(Material.MISCELLANEOUS, MaterialColor.WOOD).hardnessAndResistance(1.0F, 0.3F).sound(CARDBOARD_SOUND).harvestTool(ToolType.AXE)));
+    public static final RegistryObject<Block> SMOOTH_CARDBOARD = BLOCKS.register("smooth_cardboard", () -> new CardboardBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(1.0F, 0.3F).sound(CARDBOARD_SOUND).harvestTool(ToolType.AXE)));
     public static final RegistryObject<Item> SMOOTH_CARDBOARD_ITEM = ITEMS.register("smooth_cardboard", () -> new BlockItem(SMOOTH_CARDBOARD.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 
     public static final RegistryObject<Block> SMOOTH_CARDBOARD_SLAB = BLOCKS.register("smooth_cardboard_slab", () -> new CardboardSlab(Block.Properties.from(SMOOTH_CARDBOARD.get())));

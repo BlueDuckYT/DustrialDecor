@@ -21,7 +21,7 @@ public class DustrialDecorConfig {
                 .define("village_houses", false, o -> o instanceof Boolean));
         this.LOOT_TABLE_MODIFICATION= subscriber.subscribe(builder
                 .comment("Add this mod's items to loot tables? (such as dungeon chests)")
-                .define("loot_table_modification", true, o -> o instanceof Boolean));
+                .define("loot_table_modification", false, o -> o instanceof Boolean));
 
         builder.pop();
     }

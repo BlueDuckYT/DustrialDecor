@@ -1,0 +1,14 @@
+ {
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "dustrial_decor:cast_iron_pillar"
+    }
+  },
+  "result": {
+    "item": "dustrial_decor:engraved_cast_iron_block"
+  }
+}

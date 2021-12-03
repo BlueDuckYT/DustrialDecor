@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "item": "dustrial_decor:cast_iron_brick_vertical_slab",
+          "type": "forge:item_exists"
+        }
+      ],
+
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "#"
+        ],
+        "key": {
+          "#": {
+            "item": "dustrial_decor:cast_iron_brick_vertical_slab"
+          }
+        },
+        "result": {
+          "item": "dustrial_decor:cast_iron_brick_slab"
+        }
+      }
+    }
+  ]
+}

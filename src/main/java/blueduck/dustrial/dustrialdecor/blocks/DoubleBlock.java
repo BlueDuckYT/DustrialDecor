@@ -50,7 +50,7 @@ public class DoubleBlock extends Block implements IWaterLoggable {
     public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
         BlockPos blockpos = pos.up();
         BlockState blockstate = worldIn.getBlockState(blockpos);
-        return state.get(HALF) == DoubleBlockHalf.UPPER ? (blockstate.isSolidSide(worldIn, blockpos, Direction.DOWN) || (blockstate.getBlock() instanceof LargeChain) && state.get(LargeChain.AXIS).isVertical()) && isReplaceable(worldIn.getBlockState(pos.down())) : blockstate.isIn(this) && isReplaceable(state);
+        return state.get(HALF) == DoubleBlockHalf.UPPER ? (blockstate.isSolidSide(worldIn, blockpos, Direction.DOWN) || (blockstate.getBlock() instanceof LargeChain)) && isReplaceable(worldIn.getBlockState(pos.down())) : blockstate.isIn(this) && isReplaceable(state);
     }
 
     public boolean isReplaceable(BlockState state) {

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "dustrial_decor:block/cast_iron_brick_slab" },
+        "type=top": { "model": "dustrial_decor:block/cast_iron_brick_slab_top" },
+        "type=double": { "model": "dustrial_decor:block/cast_iron_bricks" }
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "dustrial_decor:cast_iron_billet"
+    }
+  },
+  "result": {
+    "item": "dustrial_decor:cast_iron_block",
+    "count": 12
+  }
+}

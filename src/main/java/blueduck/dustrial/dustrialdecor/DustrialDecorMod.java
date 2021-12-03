@@ -155,6 +155,7 @@ public class DustrialDecorMod
             RenderTypeLookup.setRenderLayer(DustrialBlocks.BARBED_CHAIN_LINK_FENCE.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.BARBED_IRON_BARS.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.PADDED_TRAPDOOR.get(), RenderType.getCutoutMipped());
+            RenderTypeLookup.setRenderLayer(DustrialBlocks.CAST_IRON_BALUSTRADE.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.INDUSTRIAL_IRON_DOOR.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.CHAIN_TRAPDOOR.get(), RenderType.getCutoutMipped());
             RenderTypeLookup.setRenderLayer(DustrialBlocks.PADDED_DOOR.get(), RenderType.getCutoutMipped());

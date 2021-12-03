@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#$",
+    "$$"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "$": {
+      "tag": "minecraft:coals"
+    }
+  },
+  "result": {
+    "item": "dustrial_decor:cast_iron_billet",
+    "count": 4
+  }
+}
