@@ -1,16 +1,23 @@
 package blueduck.dustrial.dustrialdecor.blocks;
 
-import net.minecraft.block.*;
-import net.minecraft.block.material.Material;
-import net.minecraft.entity.item.FallingBlockEntity;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.entity.item.FallingBlockEntity;
+import net.minecraft.core.Direction;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.Level;
+import net.minecraft.server.level.ServerLevel;
 
 import java.util.Random;
+
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class CinderBlock extends RotatedPillarBlock {
     public CinderBlock(Properties properties) {
@@ -18,8 +25,8 @@ public class CinderBlock extends RotatedPillarBlock {
     }
 
 
-    public void onBlockAdded(BlockState state, World worldIn, BlockPos pos, BlockState oldState, boolean isMoving) {
-        worldIn.getPendingBlockTicks().scheduleTick(pos, this, this.tickRate(worldIn));
+    public void onPlace(BlockState state, Level worldIn, BlockPos pos, BlockState oldState, boolean isMoving) {
+        worldIn.scheduleTick(pos, this, this.tickRate(worldIn));
     }
 
     /**
@@ -28,17 +35,24 @@ public class CinderBlock extends RotatedPillarBlock {
      * returns its solidified counterpart.
      * Note that this method should ideally consider only the specific face passed in.
      */
-    public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-        worldIn.getPendingBlockTicks().scheduleTick(currentPos, this, this.tickRate(worldIn));
-        return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+        worldIn.scheduleTick(currentPos, this, this.tickRate(worldIn));
+        return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
     }
 
-    public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
-        if (worldIn.isAirBlock(pos.down()) || canFallThrough(worldIn.getBlockState(pos.down())) && pos.getY() >= 0) {
-            FallingBlockEntity fallingblockentity = new FallingBlockEntity(worldIn, (double)pos.getX() + 0.5D, (double)pos.getY(), (double)pos.getZ() + 0.5D, worldIn.getBlockState(pos));
-            this.onStartFalling(fallingblockentity);
-            worldIn.addEntity(fallingblockentity);
+    public void tick(BlockState p_53216_, ServerLevel p_53217_, BlockPos p_53218_, Random p_53219_) {
+        if (isFree(p_53217_.getBlockState(p_53218_.below())) && p_53218_.getY() >= p_53217_.getMinBuildHeight()) {
+            FallingBlockEntity fallingblockentity = FallingBlockEntity.m_201971_(p_53217_, p_53218_, p_53216_);
+            this.falling(fallingblockentity);
         }
+    }
+
+    protected void falling(FallingBlockEntity p_53206_) {
+    }
+
+    public static boolean isFree(BlockState p_53242_) {
+        Material material = p_53242_.getMaterial();
+        return p_53242_.isAir() || p_53242_.m_204336_(BlockTags.FIRE) || material.isLiquid() || material.isReplaceable();
     }
 
     protected void onStartFalling(FallingBlockEntity fallingEntity) {
@@ -47,7 +61,7 @@ public class CinderBlock extends RotatedPillarBlock {
     /**
      * How many world ticks before ticking
      */
-    public int tickRate(IWorldReader worldIn) {
+    public int tickRate(LevelReader worldIn) {
         return 2;
     }
 

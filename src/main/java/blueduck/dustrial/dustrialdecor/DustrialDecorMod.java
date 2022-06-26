@@ -3,22 +3,20 @@ package blueduck.dustrial.dustrialdecor;
 import blueduck.dustrial.dustrialdecor.config.ConfigHelper;
 import blueduck.dustrial.dustrialdecor.config.DustrialDecorConfig;
 import blueduck.dustrial.dustrialdecor.registry.DustrialBlocks;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.merchant.villager.VillagerProfession;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.MerchantOffer;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.TableLootEntry;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.npc.VillagerProfession;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.entries.LootTableReference;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.LootTableLoadEvent;
@@ -29,14 +27,12 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
-import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -83,7 +79,6 @@ public class DustrialDecorMod
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
-        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
@@ -100,11 +95,7 @@ public class DustrialDecorMod
                 collect(Collectors.toList()));
     }
     // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public void onServerStarting(FMLServerStartingEvent event) {
-        // do something when the server starts
-        LOGGER.info("HELLO from server starting");
-    }
+
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
     // Event bus for receiving Registry Events)
@@ -119,27 +110,27 @@ public class DustrialDecorMod
 
     @SubscribeEvent
     public void entitySpawn(LivingSpawnEvent.SpecialSpawn event) {
-        if (CONFIG.MOBS_SPAWN_WITH_CARDBOARD_ARMOR.get() && !event.getWorld().isRemote() && event.getEntity().getEntityWorld().getRandom().nextDouble() < 0.05) {
+        if (CONFIG.MOBS_SPAWN_WITH_CARDBOARD_ARMOR.get() && !event.getWorld().isClientSide() && event.getEntity().getCommandSenderWorld().getRandom().nextDouble() < 0.05) {
             EntityType<?> type = event.getEntityLiving().getType();
             if ((type == EntityType.ZOMBIE
                     || type == EntityType.SKELETON
                     || type == EntityType.STRAY
                     || type == EntityType.HUSK
                     || type == EntityType.DROWNED)
-                    && event.getEntityLiving() instanceof MobEntity
-                    && event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty()
-                    && event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.CHEST).isEmpty()
-                    && event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.LEGS).isEmpty()
-                    && event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.FEET).isEmpty()) {
-                        MobEntity entity = (MobEntity) event.getEntityLiving();
-                        entity.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(DustrialBlocks.CARDBOARD_HELMET.get()));
-                        entity.setDropChance(EquipmentSlotType.HEAD, 0.085F);
-                        entity.setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(DustrialBlocks.CARDBOARD_CHESTPLATE.get()));
-                        entity.setDropChance(EquipmentSlotType.CHEST, 0.085F);
-                        entity.setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(DustrialBlocks.CARDBOARD_LEGGINGS.get()));
-                        entity.setDropChance(EquipmentSlotType.LEGS, 0.085F);
-                        entity.setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(DustrialBlocks.CARDBOARD_BOOTS.get()));
-                        entity.setDropChance(EquipmentSlotType.FEET, 0.085F);
+                    && event.getEntityLiving() instanceof Mob
+                    && event.getEntityLiving().getItemBySlot(EquipmentSlot.HEAD).isEmpty()
+                    && event.getEntityLiving().getItemBySlot(EquipmentSlot.CHEST).isEmpty()
+                    && event.getEntityLiving().getItemBySlot(EquipmentSlot.LEGS).isEmpty()
+                    && event.getEntityLiving().getItemBySlot(EquipmentSlot.FEET).isEmpty()) {
+                        Mob entity = (Mob) event.getEntityLiving();
+                        entity.setItemSlot(EquipmentSlot.HEAD, new ItemStack(DustrialBlocks.CARDBOARD_HELMET.get()));
+                        entity.setDropChance(EquipmentSlot.HEAD, 0.085F);
+                        entity.setItemSlot(EquipmentSlot.CHEST, new ItemStack(DustrialBlocks.CARDBOARD_CHESTPLATE.get()));
+                        entity.setDropChance(EquipmentSlot.CHEST, 0.085F);
+                        entity.setItemSlot(EquipmentSlot.LEGS, new ItemStack(DustrialBlocks.CARDBOARD_LEGGINGS.get()));
+                        entity.setDropChance(EquipmentSlot.LEGS, 0.085F);
+                        entity.setItemSlot(EquipmentSlot.FEET, new ItemStack(DustrialBlocks.CARDBOARD_BOOTS.get()));
+                        entity.setDropChance(EquipmentSlot.FEET, 0.085F);
 
                     }
                 }
@@ -151,30 +142,30 @@ public class DustrialDecorMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.CHAIN_LINK_FENCE.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.BARBED_CHAIN_LINK_FENCE.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.BARBED_IRON_BARS.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.PADDED_TRAPDOOR.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.CAST_IRON_BALUSTRADE.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.INDUSTRIAL_IRON_DOOR.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.CHAIN_TRAPDOOR.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.PADDED_DOOR.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.CHAIN_DOOR.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.CARDBOARD_DOOR.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.RUSTY_IRON_TRAPDOOR.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.IRON_BAR_TRAPDOOR.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.RUSTY_IRON_DOOR.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.IRON_BAR_DOOR.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.GOLD_CHAIN.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.LARGE_CHAIN.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.LARGE_GOLD_CHAIN.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.ANCHOR.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.HOOK.get(), RenderType.getCutoutMipped());
-            RenderTypeLookup.setRenderLayer(DustrialBlocks.REDSTONE_LANTERN.get(), RenderType.getCutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.CHAIN_LINK_FENCE.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.BARBED_CHAIN_LINK_FENCE.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.BARBED_IRON_BARS.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.PADDED_TRAPDOOR.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.CAST_IRON_BALUSTRADE.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.INDUSTRIAL_IRON_DOOR.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.CHAIN_TRAPDOOR.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.PADDED_DOOR.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.CHAIN_DOOR.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.CARDBOARD_DOOR.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.RUSTY_IRON_TRAPDOOR.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.IRON_BAR_TRAPDOOR.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.RUSTY_IRON_DOOR.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.IRON_BAR_DOOR.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.GOLD_CHAIN.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.LARGE_CHAIN.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.LARGE_GOLD_CHAIN.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.ANCHOR.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.HOOK.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.REDSTONE_LANTERN.get(), RenderType.cutoutMipped());
 
             if (DustrialBlocks.LARGE_ICE_CHAIN != null) {
 
-                RenderTypeLookup.setRenderLayer(DustrialBlocks.LARGE_ICE_CHAIN.get(), RenderType.getCutoutMipped());
+                ItemBlockRenderTypes.setRenderLayer(DustrialBlocks.LARGE_ICE_CHAIN.get(), RenderType.cutoutMipped());
             }
 
 
@@ -191,28 +182,28 @@ public class DustrialDecorMod
         public static void onLootLoad(LootTableLoadEvent event) {
             if (CONFIG.LOOT_TABLE_MODIFICATION.get()) {
                 if (event.getName().equals(new ResourceLocation("minecraft", "chests/simple_dungeon"))) {
-                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
+                    event.getTable().addPool(LootPool.lootPool().add(LootTableReference.lootTableReference(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
                 }
                 if (event.getName().equals(new ResourceLocation("minecraft", "chests/pillager_outpost"))) {
-                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
+                    event.getTable().addPool(LootPool.lootPool().add(LootTableReference.lootTableReference(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
                 }
                 if (event.getName().equals(new ResourceLocation("minecraft", "chests/woodland_mansion"))) {
-                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
+                    event.getTable().addPool(LootPool.lootPool().add(LootTableReference.lootTableReference(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
                 }
                 if (event.getName().equals(new ResourceLocation("minecraft", "chests/shipwreck_supply"))) {
-                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
+                    event.getTable().addPool(LootPool.lootPool().add(LootTableReference.lootTableReference(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
                 }
                 if (event.getName().equals(new ResourceLocation("minecraft", "chests/stronghold_corridor"))) {
-                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
+                    event.getTable().addPool(LootPool.lootPool().add(LootTableReference.lootTableReference(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
                 }
                 if (event.getName().equals(new ResourceLocation("minecraft", "chests/village/village_toolsmith"))) {
-                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
+                    event.getTable().addPool(LootPool.lootPool().add(LootTableReference.lootTableReference(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
                 }
                 if (event.getName().equals(new ResourceLocation("minecraft", "chests/village/village_weaponsmith"))) {
-                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
+                    event.getTable().addPool(LootPool.lootPool().add(LootTableReference.lootTableReference(new ResourceLocation(MODID, "chests/dungeon"))).name("dustrial_inject").build());
                 }
                 if (event.getName().equals(new ResourceLocation("minecraft", "entities/zombie"))) {
-                    event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(MODID, "entities/zombie"))).name("dustrial_inject").build());
+                    event.getTable().addPool(LootPool.lootPool().add(LootTableReference.lootTableReference(new ResourceLocation(MODID, "entities/zombie"))).name("dustrial_inject").build());
                 }
             }
         }

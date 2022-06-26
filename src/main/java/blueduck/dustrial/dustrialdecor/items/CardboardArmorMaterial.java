@@ -1,40 +1,40 @@
 package blueduck.dustrial.dustrialdecor.items;
 
 import blueduck.dustrial.dustrialdecor.registry.DustrialBlocks;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class CardboardArmorMaterial implements IArmorMaterial {
+public class CardboardArmorMaterial implements ArmorMaterial {
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};
     @Override
-    public int getDurability(EquipmentSlotType slotIn) {
+    public int getDurabilityForSlot(EquipmentSlot slotIn) {
         return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * 10;
     }
 
     @Override
-    public int getDamageReductionAmount(EquipmentSlotType slotIn) {
+    public int getDefenseForSlot(EquipmentSlot slotIn) {
         return 2;
     }
 
     @Override
-    public int getEnchantability() {
+    public int getEnchantmentValue() {
         return 5;
     }
 
     @Override
-    public SoundEvent getSoundEvent() {
-        return SoundEvents.BLOCK_BEEHIVE_ENTER;
+    public SoundEvent getEquipSound() {
+        return SoundEvents.BEEHIVE_ENTER;
     }
 
     @Override
-    public Ingredient getRepairMaterial() {
-        return Ingredient.fromItems(DustrialBlocks.CARDBOARD.get());
+    public Ingredient getRepairIngredient() {
+        return Ingredient.of(DustrialBlocks.CARDBOARD.get());
     }
 
     @OnlyIn(Dist.CLIENT)

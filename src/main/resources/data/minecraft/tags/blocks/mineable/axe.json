@@ -1,0 +1,16 @@
+{
+  "values": [
+    "dustrial_decor:cardboard_box",
+    "dustrial_decor:smooth_cardboard",
+    "dustrial_decor:smooth_cardboard_slab",
+    "dustrial_decor:smooth_cardboard_stairs",
+    {
+      "id": "dustrial_decor:smooth_cardboard_vertical_slab",
+      "required": false
+    },
+    "dustrial_decor:folded_cardboard",
+    "dustrial_decor:cardboard_scrap",
+    "dustrial_decor:cardboard_trapdoor",
+    "dustrial_decor:cardboard_door"
+  ]
+}

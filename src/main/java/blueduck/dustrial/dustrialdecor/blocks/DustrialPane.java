@@ -1,15 +1,17 @@
 package blueduck.dustrial.dustrialdecor.blocks;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.PaneBlock;
-import net.minecraft.entity.Entity;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.IronBarsBlock;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
 
-public class DustrialPane extends PaneBlock {
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 
-    public static final DamageSource BARBED = (new DamageSource("barb")).setDamageBypassesArmor();
+public class DustrialPane extends IronBarsBlock {
+
+    public static final DamageSource BARBED = (new DamageSource("barb")).bypassArmor();
 
 
     public boolean isClimbable;
@@ -26,14 +28,14 @@ public class DustrialPane extends PaneBlock {
     }
 
     @Override
-    public boolean isLadder(BlockState state, net.minecraft.world.IWorldReader world, BlockPos pos, net.minecraft.entity.LivingEntity entity) {
+    public boolean isLadder(BlockState state, net.minecraft.world.level.LevelReader world, BlockPos pos, net.minecraft.world.entity.LivingEntity entity) {
         return isClimbable;
     }
 
     @Override
-    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+    public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
         if (isBarbed && worldIn.getRandom().nextInt(10) < 1) {
-            entityIn.attackEntityFrom(BARBED, 1);
+            entityIn.hurt(BARBED, 1);
         }
     }
 }

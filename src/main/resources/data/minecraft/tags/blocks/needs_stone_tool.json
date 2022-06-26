@@ -1,0 +1,75 @@
+{
+  "values": [
+    "dustrial_decor:padded_trapdoor",
+    "dustrial_decor:padded_door",
+    "dustrial_decor:barbed_iron_bars",
+    "dustrial_decor:industrial_iron_block",
+    "dustrial_decor:industrial_iron_pillar",
+    "dustrial_decor:bolted_industrial_iron_block",
+    "dustrial_decor:bolted_industrial_iron_slab",
+    {
+      "id": "dustrial_decor:bolted_industrial_iron_vertical_slab",
+      "required": false
+    },
+
+    "dustrial_decor:bolted_industrial_iron_stairs",
+    "dustrial_decor:industrial_iron_trapdoor",
+    "dustrial_decor:industrial_iron_door",
+    "dustrial_decor:cast_iron_block",
+    "dustrial_decor:cast_iron_pillar",
+    "dustrial_decor:cast_iron_bricks",
+    "dustrial_decor:cast_iron_brick_slab",
+    {
+      "id": "dustrial_decor:cast_iron_brick_vertical_slab",
+      "required": false
+    },
+    "dustrial_decor:cast_iron_brick_stairs",
+    "dustrial_decor:engraved_cast_iron_block",
+    "dustrial_decor:cast_iron_balustrade",
+    "dustrial_decor:cast_iron_brick_stairs",
+    "dustrial_decor:sheet_metal_plating",
+    "dustrial_decor:sheet_metal_plating_slab",
+    {
+      "id": "dustrial_decor:sheet_metal_plating_vertical_slab",
+      "required": false
+    },
+    "dustrial_decor:sheet_metal_plating_stairs",
+    "dustrial_decor:sheet_metal_paneling",
+    "dustrial_decor:sheet_metal_walling",
+    "dustrial_decor:sheet_metal_siding",
+    "dustrial_decor:sheet_metal_treading",
+    "dustrial_decor:sheet_metal_treading_slab",
+    {
+      "id": "dustrial_decor:sheet_metal_treading_vertical_slab",
+      "required": false
+    },
+    "dustrial_decor:sheet_metal_treading_stairs",
+    "dustrial_decor:sheet_metal_trapdoor",
+    "dustrial_decor:sheet_metal_door",
+    "dustrial_decor:rusty_sheet_metal_plating",
+    "dustrial_decor:rusty_sheet_metal_plating_slab",
+    {
+      "id": "dustrial_decor:rusty_sheet_metal_plating_vertical_slab",
+      "required": false
+    },
+    "dustrial_decor:rusty_sheet_metal_plating_stairs",
+    "dustrial_decor:rusty_sheet_metal_paneling",
+    "dustrial_decor:rusty_sheet_metal_walling",
+    "dustrial_decor:rusty_sheet_metal_siding",
+    "dustrial_decor:rusty_sheet_metal_treading",
+    "dustrial_decor:rusty_sheet_metal_treading_slab",
+    {
+      "id": "dustrial_decor:rusty_sheet_metal_treading_vertical_slab",
+      "required": false
+    },
+    "dustrial_decor:rusty_sheet_metal_treading_stairs",
+    "dustrial_decor:rusty_sheet_metal_trapdoor",
+    "dustrial_decor:rusty_sheet_metal_door",
+    "dustrial_decor:rusty_iron_block",
+    "dustrial_decor:iron_bar_trapdoor",
+    "dustrial_decor:iron_bar_door",
+    "dustrial_decor:rusty_iron_block",
+    "dustrial_decor:rusty_iron_door",
+    "dustrial_decor:rusty_iron_trapdoor"
+  ]
+}

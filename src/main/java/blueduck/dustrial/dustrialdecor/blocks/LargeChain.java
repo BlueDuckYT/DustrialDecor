@@ -1,23 +1,21 @@
 package blueduck.dustrial.dustrialdecor.blocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ChainBlock;
-import net.minecraft.block.HorizontalBlock;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.state.DirectionProperty;
-import net.minecraft.state.StateContainer;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.ChainBlock;
+import net.minecraft.core.Direction;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.level.BlockGetter;
+
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 
 public class LargeChain extends ChainBlock {
 
-    protected static final VoxelShape Y_AXIS_SHAPE = Block.makeCuboidShape(4.5D, 0.0D, 4.5D, 11.5D, 16.0D, 11.5D);
-    protected static final VoxelShape Z_AXIS_SHAPE = Block.makeCuboidShape(4.5D, 4.5D, 0.0D, 11.5D, 11.5D, 16.0D);
-    protected static final VoxelShape X_AXIS_SHAPE = Block.makeCuboidShape(0.0D, 4.5D, 4.5D, 16.0D, 11.5D, 11.5D);
+    protected static final VoxelShape Y_AXIS_SHAPE = Block.box(4.5D, 0.0D, 4.5D, 11.5D, 16.0D, 11.5D);
+    protected static final VoxelShape Z_AXIS_SHAPE = Block.box(4.5D, 4.5D, 0.0D, 11.5D, 11.5D, 16.0D);
+    protected static final VoxelShape X_AXIS_SHAPE = Block.box(0.0D, 4.5D, 4.5D, 16.0D, 11.5D, 11.5D);
 
 
     public LargeChain(Properties properties) {
@@ -25,13 +23,13 @@ public class LargeChain extends ChainBlock {
     }
 
     @Override
-    public boolean isLadder(BlockState state, net.minecraft.world.IWorldReader world, BlockPos pos, net.minecraft.entity.LivingEntity entity) {
-        return state.get(AXIS).equals(Direction.Axis.Y);
+    public boolean isLadder(BlockState state, net.minecraft.world.level.LevelReader world, BlockPos pos, net.minecraft.world.entity.LivingEntity entity) {
+        return state.getValue(AXIS).equals(Direction.Axis.Y);
     }
 
 
-    public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-        switch((Direction.Axis)state.get(AXIS)) {
+    public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
+        switch((Direction.Axis)state.getValue(AXIS)) {
             case X:
             default:
                 return X_AXIS_SHAPE;
