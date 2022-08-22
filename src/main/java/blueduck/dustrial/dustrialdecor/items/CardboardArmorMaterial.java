@@ -37,7 +37,6 @@ public class CardboardArmorMaterial implements ArmorMaterial {
         return Ingredient.of(DustrialBlocks.CARDBOARD.get());
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public String getName() {
         return "dustrial_decor:cardboard";
